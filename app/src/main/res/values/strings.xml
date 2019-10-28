@@ -16,13 +16,13 @@
     <string name="diameter">Diameter</string>
     <string name="custom_depth">Custom depth</string>
     <string name="circle">Circle</string>
-    <string name="equals">equals</string>
+    <string name="equals">=</string>
     <string name="units">Units</string>
     <string name="people">People</string>
     <string name="circumference">Circumference</string>
     <string name="topping_cost">Topping Cost</string>
     <string name="slices">Slices</string>
     <string name="title_activity_calc">Calc</string>
-
+    <color name="white">#FFFFFF</color>
 
 </resources>

@@ -5,10 +5,19 @@ import android.annotation.SuppressLint;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -67,7 +76,7 @@ public class calc extends AppCompatActivity {
     private final Runnable mHideRunnable = new Runnable() {
         @Override
         public void run() {
-            hide();
+             //hide();
         }
     };
     /**
@@ -91,8 +100,176 @@ public class calc extends AppCompatActivity {
 
         setContentView(R.layout.activity_calc);
 
+        final CheckBox mToppingsEnable = findViewById(R.id.Toppings_Enable);
+        final Button buttonLess = findViewById(R.id.Toppings_Quantity_Less);
+        final Button buttonMore = findViewById(R.id.Toppings_Quantity_More);
+        final EditText txtQuant = findViewById(R.id.Toppings_Quantity_Custom);
+        final EditText txtCost = findViewById(R.id.Toppings_Cost_Custom);
+        final TextView topCst = findViewById(R.id.textView10);
+        final TextView topQuant = findViewById(R.id.textView11);
+
+        final Button buttonPz = findViewById(R.id.Pizzeria_New);
+
+        final EditText txtDep = findViewById(R.id.customDepth);
+
+        final RadioButton CD = findViewById(R.id.Depth_CD);
+        final RadioButton TC = findViewById(R.id.Depth_TC);
+        final RadioButton DD = findViewById(R.id.Depth_DD);
+        final RadioButton HT = findViewById(R.id.Depth_HT);
+        //final RadioGroup DepthGroup = findViewById(R.id.Depth_Group);
+        //final int id = DepthGroup.getCheckedRadioButtonId();
+
+        final TextView txtUnit = findViewById(R.id.Unit_Display);
+        final RadioButton SL = findViewById(R.id.Unit_S);
+        final RadioButton DI = findViewById(R.id.Unit_D);
+        final RadioButton RA = findViewById(R.id.Unit_R);
+        final RadioButton CI = findViewById(R.id.Unit_C);
+
+        final Button buttonPLess = findViewById(R.id.People_Less);
+        final Button buttonPMore = findViewById(R.id.People_More);
+        final EditText txtP = findViewById(R.id.People_Custom);
+
         mVisible = true;
 
+        //when the + people button is clicked incriment the people text field by 1
+        buttonPMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int valP = Integer.parseInt(txtP.getText().toString());
+                txtP.setText(Integer.toString(1 + valP));
+            }
+        });
+
+        //when the - people button is clicked decriment the people text field by 1
+        buttonPLess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int valP = Integer.parseInt(txtP.getText().toString());
+                if(valP > 1){
+                    txtP.setText(Integer.toString(valP - 1));
+                } else {
+                    txtP.setText("1");
+                }
+            }
+        });
+
+        //when the + topping button is clicked incriment the people text field by 1
+        buttonMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int valT = Integer.parseInt(txtQuant.getText().toString().trim());
+                txtQuant.setText(Integer.toString(valT + 1));
+            }
+        });
+
+        //when the - topping button is clicked decriment the people text field by 1
+        buttonLess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int valT = Integer.parseInt(txtQuant.getText().toString().trim());
+                if(valT > 1){
+                    txtQuant.setText(Integer.toString(valT - 1));
+                } else {
+                    txtQuant.setText("1");
+                }
+
+            }
+        });
+
+        //Set text for unit specifier to slice
+        SL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtUnit.setText("Slice");
+            }
+        });
+
+        //Set text for unit specifier to diameter
+        DI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtUnit.setText("Diameter");
+            }
+        });
+
+        //Set text for unit specifier to radius
+        RA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtUnit.setText("Radius");
+            }
+        });
+
+        //Set text for unit specifier to circumference
+        CI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtUnit.setText("Circumference");
+            }
+        });
+
+        //Custom depth is selected, custom textbox is enabled
+        CD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtDep.setEnabled(CD.isChecked());
+
+            }
+        });
+
+        //Hand tossed is selected, custom textbox is dissabled
+        HT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtDep.setEnabled(!HT.isChecked());
+
+            }
+        });
+
+        //Thin crust is selected, custom textbox is dissabled
+        TC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtDep.setEnabled(!TC.isChecked());
+
+            }
+        });
+
+        //Deep dish is selected, custom textbox is dissabled
+        DD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtDep.setEnabled(!DD.isChecked());
+
+            }
+        });
+
+        // add pizzaria button is clicked
+        buttonPz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
+        //toggle toppings, controls enabling and dissabling topping related fields
+        mToppingsEnable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // check current state of a Switch (true or false).
+                Boolean switchState = mToppingsEnable.isChecked();
+
+                buttonLess.setEnabled(switchState);
+                buttonMore.setEnabled(switchState);
+                txtQuant.setEnabled(switchState);
+                txtCost.setEnabled(switchState);
+                topCst.setEnabled(switchState);
+                topQuant.setEnabled(switchState);
+            }
+        });
+/*
 
 
         // Set up the user interaction to manually show or hide the system UI.
@@ -102,12 +279,14 @@ public class calc extends AppCompatActivity {
                 toggle();
             }
         });
-
+*/
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
 
     }
+
+
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -121,26 +300,26 @@ public class calc extends AppCompatActivity {
 
     private void toggle() {
         if (mVisible) {
-            hide();
+            //hide();
         } else {
             show();
         }
     }
-
+/*
     private void hide() {
         // Hide UI first
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.hide();
         }
-        mControlsView.setVisibility(View.GONE);
+        //mControlsView.setVisibility(View.GONE);
         mVisible = false;
 
         // Schedule a runnable to remove the status and navigation bar after a delay
         mHideHandler.removeCallbacks(mShowPart2Runnable);
         mHideHandler.postDelayed(mHidePart2Runnable, UI_ANIMATION_DELAY);
     }
-
+*/
     @SuppressLint("InlinedApi")
     private void show() {
         // Show the system bar
