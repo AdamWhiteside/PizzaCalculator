@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //pick button is clicked launch calc page
+        //pick button is clicked launch calc page 
         mPickButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
