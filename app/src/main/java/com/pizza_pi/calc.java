@@ -128,8 +128,18 @@ public class calc extends AppCompatActivity {
         final Button buttonPLess = findViewById(R.id.People_Less);
         final Button buttonPMore = findViewById(R.id.People_More);
         final EditText txtP = findViewById(R.id.People_Custom);
-
+        Button mcalcButton = findViewById(R.id.calcButton);
         mVisible = true;
+
+
+
+        //calc button is clicked, switches to leaderboard page
+        mcalcButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(calc.this, leaderboardActivity.class));
+            }
+        });
 
         //when the + people button is clicked incriment the people text field by 1
         buttonPMore.setOnClickListener(new View.OnClickListener() {

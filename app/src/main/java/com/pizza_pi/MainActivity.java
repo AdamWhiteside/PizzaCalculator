@@ -36,23 +36,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //pick button is clicked
+        //pick button is clicked launch calc page
         mPickButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 startActivity(new Intent(MainActivity.this, calc.class));
 
             }
         });
 
-        //help button is clicked
+        //help button is clicked launch help page
         mHelpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(MainActivity.this, "Help", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(MainActivity.this, helpActivity.class));
 
             }
         });
