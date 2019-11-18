@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".calc"
-    tools:showIn="@layout/activity_calc"
-    android:background="@color/white">
+    tools:showIn="@layout/activity_calc">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -51,6 +51,7 @@
                         android:id="@+id/Pizzeria_New"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@color/colorAccent"
                         android:text="+" />
 
                 </LinearLayout>
@@ -256,6 +257,7 @@
                         android:id="@+id/People_Less"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@color/colorAccent"
                         android:layout_weight="1"
                         android:text="-" />
 
@@ -273,6 +275,7 @@
                         android:id="@+id/People_More"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@color/colorAccent"
                         android:layout_weight="1"
                         android:text="+" />
                 </LinearLayout>
@@ -328,6 +331,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@color/colorAccent"
                         android:enabled="false"
                         android:text="-" />
 
@@ -346,6 +350,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@color/colorAccent"
                         android:enabled="false"
                         android:text="+" />
                 </LinearLayout>
@@ -358,6 +363,7 @@
                     android:id="@+id/calcButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
                     android:text="Calculate" />
 
             </LinearLayout>
