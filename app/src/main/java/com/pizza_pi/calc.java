@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
@@ -101,8 +102,8 @@ public class calc extends AppCompatActivity {
         setContentView(R.layout.activity_calc);
 
         final CheckBox mToppingsEnable = findViewById(R.id.Toppings_Enable);
-        final Button buttonLess = findViewById(R.id.Toppings_Quantity_Less);
-        final Button buttonMore = findViewById(R.id.Toppings_Quantity_More);
+        final ImageButton buttonLess = findViewById(R.id.Toppings_Quantity_Less);
+        final ImageButton buttonMore = findViewById(R.id.Toppings_Quantity_More);
         final EditText txtQuant = findViewById(R.id.Toppings_Quantity_Custom);
         final EditText txtCost = findViewById(R.id.Toppings_Cost_Custom);
         final TextView topCst = findViewById(R.id.textView10);
@@ -125,13 +126,14 @@ public class calc extends AppCompatActivity {
         final RadioButton RA = findViewById(R.id.Unit_R);
         final RadioButton CI = findViewById(R.id.Unit_C);
 
-        final Button buttonPLess = findViewById(R.id.People_Less);
-        final Button buttonPMore = findViewById(R.id.People_More);
+        final ImageButton buttonPLess = findViewById(R.id.People_Less);
+        final ImageButton buttonPMore = findViewById(R.id.People_More);
         final EditText txtP = findViewById(R.id.People_Custom);
         Button mcalcButton = findViewById(R.id.calcButton);
         mVisible = true;
 
-
+        buttonLess.setEnabled(false);
+        buttonMore.setEnabled(false);
 
         //calc button is clicked, switches to leaderboard page
         mcalcButton.setOnClickListener(new View.OnClickListener() {

@@ -251,15 +251,20 @@
                     android:id="@+id/People_Group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal">
 
-                    <Button
+
+                    <ImageButton
                         android:id="@+id/People_Less"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorAccent"
                         android:layout_weight="1"
-                        android:text="-" />
+                        android:adjustViewBounds="true"
+                        android:background="@color/colorBackground"
+                        android:scaleType="centerInside"
+                        android:layout_margin="30dp"
+                        app:srcCompat="@drawable/asset7" />
 
                     <EditText
                         android:id="@+id/People_Custom"
@@ -271,13 +276,16 @@
                         android:inputType="number"
                         android:text="1" />
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/People_More"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorAccent"
                         android:layout_weight="1"
-                        android:text="+" />
+                        android:adjustViewBounds="true"
+                        android:background="@color/colorBackground"
+                        android:scaleType="centerInside"
+                        android:layout_margin="30dp"
+                        app:srcCompat="@drawable/asset5" />
                 </LinearLayout>
 
                 <Space
@@ -324,16 +332,20 @@
                     android:id="@+id/Topping_Group_Quantity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal">
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/Toppings_Quantity_Less"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_margin="30dp"
                         android:layout_weight="1"
-                        android:background="@color/colorAccent"
+                        android:adjustViewBounds="true"
+                        android:background="@color/colorBackground"
                         android:enabled="false"
-                        android:text="-" />
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/asset7" />
 
                     <EditText
                         android:id="@+id/Toppings_Quantity_Custom"
@@ -345,14 +357,17 @@
                         android:inputType="number"
                         android:text="1" />
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/Toppings_Quantity_More"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_margin="30dp"
                         android:layout_weight="1"
-                        android:background="@color/colorAccent"
+                        android:adjustViewBounds="true"
+                        android:background="@color/colorBackground"
                         android:enabled="false"
-                        android:text="+" />
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/asset5" />
                 </LinearLayout>
 
                 <Space
