@@ -317,6 +317,27 @@
                     android:hint="#"
                     android:inputType="numberDecimal" />
 
+                <CheckBox
+                    android:id="@+id/toppingPep"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text="Pepperoni" />
+
+                <CheckBox
+                    android:id="@+id/toppingSau"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text="Sausage" />
+
+                <CheckBox
+                    android:id="@+id/toppingChe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text="Extra Cheese" />
+
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="20dp" />
