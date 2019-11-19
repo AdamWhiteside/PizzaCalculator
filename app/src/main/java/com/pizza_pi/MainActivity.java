@@ -1,19 +1,19 @@
 package com.pizza_pi;
 
+
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.Toast;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,8 +22,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         Button mPickButton = findViewById(R.id.pick);
         Button mHelpButton = findViewById(R.id.help);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
+    
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -74,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+        //noinspection SimplifiableIfStatement
+
         if (id == R.id.action_settings) {
             return true;
         }
