@@ -2,6 +2,7 @@ package com.pizza_pi;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -116,6 +119,20 @@ public class leaderboardActivity extends AppCompatActivity {
                 led8.setText("pizza hut");
                 led9.setText("pizza hut");
                 led10.setText("pizza hut");
+
+
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.pt);
+        mp.setLooping(true);
+
+        //sound button
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mp.start();
+                //fab.setImageResource(R.drawable.yourImage);
+            }
+        });
 
 
         //main button is clicked, returns to main menu

@@ -2,6 +2,7 @@ package com.pizza_pi;
 
         import android.annotation.SuppressLint;
         import android.content.Intent;
+        import android.media.MediaPlayer;
         import android.os.Bundle;
         import android.os.Handler;
         import android.view.MotionEvent;
@@ -11,6 +12,8 @@ package com.pizza_pi;
 
         import androidx.appcompat.app.ActionBar;
         import androidx.appcompat.app.AppCompatActivity;
+
+        import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -97,6 +100,18 @@ public class helpActivity extends AppCompatActivity {
         final Button mbuttonMain = findViewById(R.id.buttonMain1);
         final TextView hlp = findViewById(R.id.helpTxt);
 
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.pt);
+        mp.setLooping(true);
+
+        //sound button
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mp.start();
+                //fab.setImageResource(R.drawable.yourImage);
+            }
+        });
 
 
         //set the text for the help page

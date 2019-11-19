@@ -6,6 +6,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
@@ -20,8 +21,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//When adding additional topping options press f3 to search for "add additional toppings"
-//this phrase is wrapped around areas of code that need to be updated when more toppings are added
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 public class calc extends AppCompatActivity {
     private static final boolean AUTO_HIDE = true;
@@ -127,6 +128,22 @@ public class calc extends AppCompatActivity {
 
         buttonLess.setEnabled(false);
         buttonMore.setEnabled(false);
+
+
+
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.pt);
+        mp.setLooping(true);
+
+        //sound button
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mp.start();
+                //fab.setImageResource(R.drawable.yourImage);
+            }
+        });
+
 
 
         //add additional toppings
