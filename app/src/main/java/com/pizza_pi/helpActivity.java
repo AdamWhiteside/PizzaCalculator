@@ -100,7 +100,7 @@ public class helpActivity extends AppCompatActivity {
 
 
         //set the text for the help page
-        hlp.setText("click the right buttons dummy");
+        hlp.setText("To use app, use buttons labeled to create your pizza. If you have any other questions, please call (487)749-9274");
 
 
 
