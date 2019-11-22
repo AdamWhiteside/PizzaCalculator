@@ -13,33 +13,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
-public class calc extends AppCompatActivity {
-    /**
-     * Whether or not the system UI should be auto-hidden after
-     * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
-     */
-    private static final boolean AUTO_HIDE = true;
+//When adding additional topping options press f3 to search for "add additional toppings"
+//this phrase is wrapped around areas of code that need to be updated when more toppings are added
 
-    /**
-     * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
-     * user interaction before hiding the system UI.
-     */
+public class calc extends AppCompatActivity {
+    private static final boolean AUTO_HIDE = true;
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
 
-    /**
-     * Some older devices needs a small delay between UI widget updates
-     * and a change of the status and navigation bar.
-     */
+
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
     private View mContentView;
@@ -101,8 +89,8 @@ public class calc extends AppCompatActivity {
         setContentView(R.layout.activity_calc);
 
         final CheckBox mToppingsEnable = findViewById(R.id.Toppings_Enable);
-        final Button buttonLess = findViewById(R.id.Toppings_Quantity_Less);
-        final Button buttonMore = findViewById(R.id.Toppings_Quantity_More);
+        final ImageButton buttonLess = findViewById(R.id.Toppings_Quantity_Less);
+        final ImageButton buttonMore = findViewById(R.id.Toppings_Quantity_More);
         final EditText txtQuant = findViewById(R.id.Toppings_Quantity_Custom);
         final EditText txtCost = findViewById(R.id.Toppings_Cost_Custom);
         final TextView topCst = findViewById(R.id.textView10);
@@ -125,11 +113,44 @@ public class calc extends AppCompatActivity {
         final RadioButton RA = findViewById(R.id.Unit_R);
         final RadioButton CI = findViewById(R.id.Unit_C);
 
-        final Button buttonPLess = findViewById(R.id.People_Less);
-        final Button buttonPMore = findViewById(R.id.People_More);
+        //add additional toppings
+        final CheckBox mToppingPep = findViewById(R.id.toppingPep);
+        final CheckBox mToppingSau = findViewById(R.id.toppingSau);
+        final CheckBox mToppingChe = findViewById(R.id.toppingChe);
+        //add additional toppings
+
+        final ImageButton buttonPLess = findViewById(R.id.People_Less);
+        final ImageButton buttonPMore = findViewById(R.id.People_More);
         final EditText txtP = findViewById(R.id.People_Custom);
         Button mcalcButton = findViewById(R.id.calcButton);
         mVisible = true;
+
+        buttonLess.setEnabled(false);
+        buttonMore.setEnabled(false);
+
+
+        //add additional toppings
+        mToppingPep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean pep = mToppingPep.isChecked();
+            }
+        });
+
+        mToppingSau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean sau = mToppingSau.isChecked();
+            }
+        });
+
+        mToppingChe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean che = mToppingChe.isChecked();
+            }
+        });
+        //add additional toppings
 
 
 
@@ -277,6 +298,12 @@ public class calc extends AppCompatActivity {
                 txtCost.setEnabled(switchState);
                 topCst.setEnabled(switchState);
                 topQuant.setEnabled(switchState);
+
+                //add additional toppings
+                mToppingPep.setEnabled(switchState);
+                mToppingSau.setEnabled(switchState);
+                mToppingChe.setEnabled(switchState);
+                //add additional toppings
             }
         });
 /*
