@@ -4,11 +4,11 @@ package com.pizza_pi.database;
  * Schema for each restaurant which entails what
  * they have available at said restaurant.
  */
-public class PizzaDbSchema {
+public class RestaurantDbSchema {
 
-    public static final class PizzaTable
+    public static final class RestaurantTable
     {
-        public static final String NAME = "pizzas";
+        public static final String NAME = "Restaurants";
 
         public static final class Cols
         {
