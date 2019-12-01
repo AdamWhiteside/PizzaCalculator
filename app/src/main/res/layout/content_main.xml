@@ -8,13 +8,57 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="211dp"
+            android:layout_height="156dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/asset2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:text="Pizza Pi"
+            android:textAlignment="center"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="50dp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
+
+        <Button
+            android:id="@+id/pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Pi"
+            android:background="@color/colorAccent"
+            android:textColor="@color/cardview_dark_background"
+            android:layout_gravity="center_vertical|center_horizontal"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <Button
+            android:id="@+id/help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="@color/cardview_dark_background"
+            android:text="Help"
+            android:layout_gravity="center_vertical|center_horizontal"
+            />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

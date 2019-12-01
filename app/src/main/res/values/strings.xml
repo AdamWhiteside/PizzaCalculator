@@ -1,4 +1,28 @@
 <resources>
     <string name="app_name">Pizza_Pi</string>
     <string name="action_settings">Settings</string>
+    <string name="shape">Shape</string>
+    <string name="pizzeria">Pizzeria</string>
+    <string name="thin_crust">Thin crust</string>
+    <string name="slice">Slice</string>
+    <string name="dominos">Dominos</string>
+    <string name="square">Square</string>
+    <string name="radius">Radius</string>
+    <string name="toppings">Toppings</string>
+    <string name="topping_quantity">Topping Quantity</string>
+    <string name="pizza_depth">Pizza Depth</string>
+    <string name="hand_tossed">Hand tossed</string>
+    <string name="deep_dish">Deep dish</string>
+    <string name="diameter">Diameter</string>
+    <string name="custom_depth">Custom depth</string>
+    <string name="circle">Circle</string>
+    <string name="equals">=</string>
+    <string name="units">Units</string>
+    <string name="people">People</string>
+    <string name="circumference">Circumference</string>
+    <string name="topping_cost">Topping Cost</string>
+    <string name="slices">Slices</string>
+    <string name="title_activity_calc">Calc</string>
+    <color name="white">#FFFFFF</color>
+
 </resources>
