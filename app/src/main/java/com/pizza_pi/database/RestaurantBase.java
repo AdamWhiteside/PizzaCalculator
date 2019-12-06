@@ -76,6 +76,8 @@ public class RestaurantBase {
         {
             cursor.close();
         }
+
+        Restaurant currentPlace = Restaurants.get(1);
         return Restaurants;
     }
 
@@ -100,6 +102,25 @@ public class RestaurantBase {
             return cursor.getRestaurant();
         }
         finally{
+            cursor.close();
+        }
+    }
+
+    public Restaurant getRestaurantName(String name)
+    {
+        RestaurantCursorWrapper cursor = queryRestaurants(
+               RestaurantTable.Cols.RESTAURANT + " = ?",
+                new String[] {name}
+        );
+        try {
+            if (cursor.getCount() == 0) {
+                return null;
+            }
+
+            cursor.moveToFirst();
+            return cursor.getRestaurant();
+        }
+        finally {
             cursor.close();
         }
     }
@@ -170,8 +191,34 @@ public class RestaurantBase {
     {
         ContentValues values = new ContentValues();
         values.put(RestaurantTable.Cols.UUID, Restaurant.getId().toString());
+
         values.put(RestaurantTable.Cols.RESTAURANT, Restaurant.getRestaurant());
-        values.put(RestaurantTable.Cols.STYLE, Restaurant.getStyle());
+        values.put(RestaurantTable.Cols.QUALITY, Restaurant.getQuality());
+
+        values.put(RestaurantTable.Cols.PERSONAL_THIN_CRUST, Restaurant.getPersonal_Thin_Crust());
+        values.put(RestaurantTable.Cols.SMALL_THIN_CRUST, Restaurant.getSmall_Thin_Crust());
+        values.put(RestaurantTable.Cols.MEDIUM_THIN_CRUST, Restaurant.getMedium_Thin_Crust());
+        values.put(RestaurantTable.Cols.LARGE_THIN_CRUST, Restaurant.getLarge_Thin_Crust());
+        values.put(RestaurantTable.Cols.PERSONAL_NEW_YORK, Restaurant.getPersonal_New_York());
+        values.put(RestaurantTable.Cols.SMALL_NEW_YORK, Restaurant.getSmall_New_York());
+        values.put(RestaurantTable.Cols.MEDIUM_NEW_YORK, Restaurant.getMedium_New_York());
+        values.put(RestaurantTable.Cols.LARGE_NEW_YORK, Restaurant.getLarge_New_York());
+        values.put(RestaurantTable.Cols.MEDIUM_ITALIAN, Restaurant.getMedium_Italian());
+        values.put(RestaurantTable.Cols.LARGE_ITALIAN, Restaurant.getLarge_Italian());
+        values.put(RestaurantTable.Cols.MEDIUM_STUFFED_CRUST, Restaurant.getMedium_Stuffed_Crust());
+        values.put(RestaurantTable.Cols.LARGE_STUFFED_CRUST, Restaurant.getLarge_Stuffed_Crust());
+        values.put(RestaurantTable.Cols.SMALL_ORIGINAL, Restaurant.getSmall_Original());
+        values.put(RestaurantTable.Cols.MEDIUM_ORIGINAL, Restaurant.getMedium_Original());
+        values.put(RestaurantTable.Cols.LARGE_ORIGINAL, Restaurant.getLarge_Original());
+        values.put(RestaurantTable.Cols.EXTRA_LARGE_ORIGINAL, Restaurant.getExtra_Large_Original());
+        values.put(RestaurantTable.Cols.SMALL_GLUTEN_FREE, Restaurant.getSmall_Gluten_Free());
+        values.put(RestaurantTable.Cols.PERSONAL_ORIGINAL_PAN, Restaurant.getPersonal_Original_Pan());
+        values.put(RestaurantTable.Cols.MEDIUM_ORIGINAL_PAN, Restaurant.getMedium_Original_Pan());
+        values.put(RestaurantTable.Cols.LARGE_ORIGINAL_PAN, Restaurant.getLarge_Original_Pan());
+        values.put(RestaurantTable.Cols.MEDIUM_HAND_TOSSED, Restaurant.getMedium_Hand_Tossed());
+        values.put(RestaurantTable.Cols.LARGE_HAND_TOSSED, Restaurant.getLarge_Hand_Tossed());
+
+
         values.put(RestaurantTable.Cols.PROPER_RADIUS, Restaurant.getProperRadius());
         values.put(RestaurantTable.Cols.TOPPING_PRICE, Restaurant.getToppingPrice());
         values.put(RestaurantTable.Cols.PEPPERONI, Restaurant.isPepperoni());
@@ -201,6 +248,7 @@ public class RestaurantBase {
         values.put(RestaurantTable.Cols.LETTUCE, Restaurant.isLettuce());
         values.put(RestaurantTable.Cols.PICKLES, Restaurant.isPickles());
         values.put(RestaurantTable.Cols.FRESH_SPINACH, Restaurant.isFresh_spinach());
+
 
         return values;
     }

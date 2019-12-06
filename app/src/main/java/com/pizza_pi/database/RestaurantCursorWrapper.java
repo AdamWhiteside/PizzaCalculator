@@ -23,10 +23,37 @@ public class RestaurantCursorWrapper extends CursorWrapper
     public Restaurant getRestaurant()
     {
         String uuidString = getString(getColumnIndex(RestaurantTable.Cols.UUID));
+
         String restaurantName = getString(getColumnIndex(RestaurantTable.Cols.RESTAURANT));
-        String style = getString(getColumnIndex(RestaurantTable.Cols.STYLE));
+
+        double personal_Thin_Crust = getDouble(getColumnIndex(RestaurantTable.Cols.PERSONAL_THIN_CRUST));
+        double small_Thin_Crust = getDouble(getColumnIndex(RestaurantTable.Cols.SMALL_THIN_CRUST));
+        double medium_Thin_Crust = getDouble(getColumnIndex(RestaurantTable.Cols.MEDIUM_THIN_CRUST));
+        double large_Thin_Crust = getDouble(getColumnIndex(RestaurantTable.Cols.LARGE_THIN_CRUST));
+        double personal_New_York = getDouble(getColumnIndex(RestaurantTable.Cols.PERSONAL_NEW_YORK));
+        double small_New_York = getDouble(getColumnIndex(RestaurantTable.Cols.SMALL_NEW_YORK));
+        double medium_New_York = getDouble(getColumnIndex(RestaurantTable.Cols.MEDIUM_NEW_YORK));
+        double large_New_York = getDouble(getColumnIndex(RestaurantTable.Cols.LARGE_NEW_YORK));
+        double medium_Italian = getDouble(getColumnIndex(RestaurantTable.Cols.MEDIUM_ITALIAN));
+        double large_Italian = getDouble(getColumnIndex(RestaurantTable.Cols.LARGE_ITALIAN));
+        double medium_Stuffed_Crust = getDouble(getColumnIndex(RestaurantTable.Cols.MEDIUM_STUFFED_CRUST));
+        double large_Stuffed_Crust = getDouble(getColumnIndex(RestaurantTable.Cols.LARGE_STUFFED_CRUST));
+        double small_Original = getDouble(getColumnIndex(RestaurantTable.Cols.SMALL_ORIGINAL));
+        double medium_Original = getDouble(getColumnIndex(RestaurantTable.Cols.MEDIUM_ORIGINAL));
+        double large_Original = getDouble(getColumnIndex(RestaurantTable.Cols.LARGE_ORIGINAL));
+        double extra_Large_Original = getDouble(getColumnIndex(RestaurantTable.Cols.EXTRA_LARGE_ORIGINAL));
+        double small_Gluten_Free = getDouble(getColumnIndex(RestaurantTable.Cols.SMALL_GLUTEN_FREE));
+        double personal_Original_Pan = getDouble(getColumnIndex(RestaurantTable.Cols.PERSONAL_ORIGINAL_PAN));
+        double medium_Original_Pan = getDouble(getColumnIndex(RestaurantTable.Cols.MEDIUM_ORIGINAL_PAN));
+        double large_Original_Pan = getDouble(getColumnIndex(RestaurantTable.Cols.LARGE_ORIGINAL_PAN));
+        double medium_Hand_Tossed = getDouble(getColumnIndex(RestaurantTable.Cols.MEDIUM_HAND_TOSSED));
+        double large_Hand_Tossed = getDouble(getColumnIndex(RestaurantTable.Cols.LARGE_HAND_TOSSED));
+
+
         double properRadius = getDouble(getColumnIndex(RestaurantTable.Cols.PROPER_RADIUS));
         double toppingPrice = getDouble(getColumnIndex(RestaurantTable.Cols.TOPPING_PRICE));
+        double quality = getDouble(getColumnIndex(RestaurantTable.Cols.TOPPING_PRICE));
+
         boolean pepperoni = getInt(getColumnIndex(RestaurantTable.Cols.PEPPERONI)) > 0;
         boolean italian_sausage = getInt(getColumnIndex(RestaurantTable.Cols.ITALIAN_SAUSAGE)) > 0;
         boolean meatball = getInt(getColumnIndex(RestaurantTable.Cols.MEATBALL)) > 0;
@@ -55,11 +82,39 @@ public class RestaurantCursorWrapper extends CursorWrapper
         boolean pickles = getInt(getColumnIndex(RestaurantTable.Cols.PICKLES)) > 0;
         boolean fresh_spinach = getInt(getColumnIndex(RestaurantTable.Cols.FRESH_SPINACH)) > 0;
 
+
+
         Restaurant Restaurant = new Restaurant(UUID.fromString(uuidString));
+
         Restaurant.setRestaurant(restaurantName);
-        Restaurant.setStyle(style);
+
+        Restaurant.setPersonal_Thin_Crust(personal_Thin_Crust);
+        Restaurant.setSmall_Thin_Crust(small_Thin_Crust);
+        Restaurant.setMedium_Thin_Crust(medium_Thin_Crust);
+        Restaurant.setLarge_Thin_Crust(large_Thin_Crust);
+        Restaurant.setPersonal_New_York(personal_New_York);
+        Restaurant.setSmall_New_York(small_New_York);
+        Restaurant.setMedium_New_York(medium_New_York);
+        Restaurant.setLarge_New_York(large_New_York);
+        Restaurant.setMedium_Italian(medium_Italian);
+        Restaurant.setLarge_Italian(large_Italian);
+        Restaurant.setMedium_Stuffed_Crust(medium_Stuffed_Crust);
+        Restaurant.setLarge_Stuffed_Crust(large_Stuffed_Crust);
+        Restaurant.setSmall_Original(small_Original);
+        Restaurant.setMedium_Original(medium_Original);
+        Restaurant.setLarge_Original(large_Original);
+        Restaurant.setExtra_Large_Original(extra_Large_Original);
+        Restaurant.setSmall_Gluten_Free(small_Gluten_Free);
+        Restaurant.setPersonal_Original_Pan(personal_Original_Pan);
+        Restaurant.setMedium_Original_Pan(medium_Original_Pan);
+        Restaurant.setLarge_Original_Pan(large_Original_Pan);
+        Restaurant.setMedium_Hand_Tossed(medium_Hand_Tossed);
+        Restaurant.setLarge_Hand_Tossed(large_Hand_Tossed);
+
         Restaurant.setProperRadius(properRadius);
         Restaurant.setToppingPrice(toppingPrice);
+        Restaurant.setQuality(quality);
+
         Restaurant.setPepperoni(pepperoni);
         Restaurant.setItalian_sausage(italian_sausage);
         Restaurant.setMeatball(meatball);

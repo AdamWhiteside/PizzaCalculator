@@ -13,10 +13,36 @@ public class RestaurantDbSchema {
         public static final class Cols
         {
             public static final String UUID = "uuid";
+
             public static final String RESTAURANT = "restaurant";
-            public static final String STYLE = "style";
+
+            public static final String PERSONAL_THIN_CRUST = "personal_thin_crust";
+            public static final String SMALL_THIN_CRUST = "small_thin_crust";
+            public static final String MEDIUM_THIN_CRUST = "medium_thin_crust";
+            public static final String LARGE_THIN_CRUST = "large_thin_crust";
+            public static final String PERSONAL_NEW_YORK = "personal_new_york";
+            public static final String SMALL_NEW_YORK = "small_new_york";
+            public static final String MEDIUM_NEW_YORK = "medium_new_york";
+            public static final String LARGE_NEW_YORK = "large_new_york";
+            public static final String MEDIUM_ITALIAN = "medium_italian";
+            public static final String LARGE_ITALIAN = "large_italian";
+            public static final String MEDIUM_STUFFED_CRUST = "medium_stuffed_crust";
+            public static final String LARGE_STUFFED_CRUST = "large_stuffed_crust";
+            public static final String SMALL_ORIGINAL = "small_original";
+            public static final String MEDIUM_ORIGINAL = "medium_original";
+            public static final String LARGE_ORIGINAL = "large_original";
+            public static final String EXTRA_LARGE_ORIGINAL = "extra_large_original";
+            public static final String SMALL_GLUTEN_FREE = "small_gluten_free";
+            public static final String PERSONAL_ORIGINAL_PAN = "personal_original_pan";
+            public static final String MEDIUM_ORIGINAL_PAN = "medium_original_pan";
+            public static final String LARGE_ORIGINAL_PAN = "large_original_pan";
+            public static final String MEDIUM_HAND_TOSSED = "medium_hand_tossed";
+            public static final String LARGE_HAND_TOSSED = "large_hand_tossed";
+
             public static final String PROPER_RADIUS = "proper_radius";
             public static final String TOPPING_PRICE = "topping_price";
+            public static final String QUALITY = "quality";
+
             public static final String PEPPERONI = "pepperoni";
             public static final String ITALIAN_SAUSAGE = "italian_sausage";
             public static final String MEATBALL = "meatball";
