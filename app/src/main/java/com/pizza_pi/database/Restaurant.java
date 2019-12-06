@@ -3,13 +3,45 @@ package com.pizza_pi.database;
 import java.io.Serializable;
 import java.util.UUID;
 
+/**
+ * This is the basis of the database.
+ * This is an object used to represent a restaurant.
+ */
 public class Restaurant implements Serializable
 {
     private UUID mId;
+
     private String mRestaurant;
-    private String mStyle;
+
+    private double mPersonal_Thin_Crust;
+    private double mSmall_Thin_Crust;
+    private double mMedium_Thin_Crust;
+    private double mLarge_Thin_Crust;
+    private double mPersonal_New_York;
+    private double mSmall_New_York;
+    private double mMedium_New_York;
+    private double mLarge_New_York;
+    private double mMedium_Italian;
+    private double mLarge_Italian;
+    private double mMedium_Stuffed_Crust;
+    private double mLarge_Stuffed_Crust;
+    private double mSmall_Original;
+    private double mMedium_Original;
+    private double mLarge_Original;
+    private double mExtra_Large_Original;
+    private double mSmall_Gluten_Free;
+    private double mPersonal_Original_Pan;
+    private double mMedium_Original_Pan;
+    private double mLarge_Original_Pan;
+    private double mMedium_Hand_Tossed;
+    private double mLarge_Hand_Tossed;
+
+
     private double mProperRadius;
     private double mToppingPrice;
+    private double mQuality;
+
+
     private boolean mPepperoni;
     private boolean mItalian_sausage;
     private boolean mMeatball;
@@ -46,10 +78,37 @@ public class Restaurant implements Serializable
     public Restaurant(UUID id)
     {
         mId = id;
+
         mRestaurant = "";
-        mStyle = "";
+
+        mPersonal_Thin_Crust = 0.0;
+        mSmall_Thin_Crust = 0.0;
+        mMedium_Thin_Crust = 0.0;
+        mLarge_Thin_Crust = 0.0;
+        mPersonal_New_York = 0.0;
+        mSmall_New_York = 0.0;
+        mMedium_New_York = 0.0;
+        mLarge_New_York = 0.0;
+        mMedium_Italian = 0.0;
+        mLarge_Italian = 0.0;
+        mMedium_Stuffed_Crust = 0.0;
+        mLarge_Stuffed_Crust = 0.0;
+        mSmall_Original = 0.0;
+        mMedium_Original = 0.0;
+        mLarge_Original = 0.0;
+        mExtra_Large_Original = 0.0;
+        mSmall_Gluten_Free = 0.0;
+        mPersonal_Original_Pan = 0.0;
+        mMedium_Original_Pan = 0.0;
+        mLarge_Original_Pan = 0.0;
+        mMedium_Hand_Tossed = 0.0;
+        mLarge_Hand_Tossed = 0.0;
+
+
         mProperRadius = 0.0;
         mToppingPrice = 0.0;
+        mQuality = 0.0;
+
         mPepperoni = false;
         mItalian_sausage = false;
         mMeatball = false;
@@ -79,19 +138,51 @@ public class Restaurant implements Serializable
         mFresh_spinach = false;
     }
 
-    public Restaurant(String Restaurant, String style, Double properRadius, Double toppingPrice, boolean pepperoni, boolean italianSausage,
-                 boolean meatball, boolean ham, boolean bacon, boolean grilledChicken, boolean beef, boolean pork,
-                 boolean mushrooms, boolean roastedSpinach, boolean redOnions, boolean blackOlives, boolean greenBellPeppers,
-                 boolean bananaPeppers, boolean pineapple, boolean jalapeno, boolean romaTomatoes,
-                 boolean phillySteak, boolean sausage, boolean anchovies, boolean canadianBacon, boolean salami,
-                 boolean onions, boolean greenOlives, boolean lettuce, boolean pickles, boolean freshSpinach
+    public Restaurant(String Restaurant, Double properRadius, Double toppingPrice, double quality, boolean pepperoni, boolean italianSausage,
+                      boolean meatball, boolean ham, boolean bacon, boolean grilledChicken, boolean beef, boolean pork,
+                      boolean mushrooms, boolean roastedSpinach, boolean redOnions, boolean blackOlives, boolean greenBellPeppers,
+                      boolean bananaPeppers, boolean pineapple, boolean jalapeno, boolean romaTomatoes, boolean phillySteak, boolean sausage,
+                      boolean anchovies, boolean canadianBacon, boolean salami, boolean onions, boolean greenOlives, boolean lettuce,
+                      boolean pickles, boolean freshSpinach, double personalThinCrust, double smallThinCrust, double mediumThinCrust,
+                      double largeThinCrust, double personalNewYork, double smallNewYork, double mediumNewYork, double largeNewYork,
+                      double mediumItalian, double largeItalian, double mediumStuffedCrust, double largeStuffedCrust, double smallOriginal,
+                      double mediumOriginal, double largeOriginal, double extraLargeOriginal, double smallGlutenFree,
+                      double personalOriginalPan, double mediumOriginalPan, double largeOriginalPan, double mediumHandTossed,
+                      double largeHandTossed
+
     )
     {
         mId = UUID.randomUUID();
+        
         mRestaurant = Restaurant;
-        mStyle = style;
+
+        mPersonal_Thin_Crust = personalThinCrust;
+        mSmall_Thin_Crust = smallThinCrust;
+        mMedium_Thin_Crust = mediumThinCrust;
+        mLarge_Thin_Crust = largeThinCrust;
+        mPersonal_New_York = personalNewYork;
+        mSmall_New_York = smallNewYork;
+        mMedium_New_York = mediumNewYork;
+        mLarge_New_York = largeNewYork;
+        mMedium_Italian = mediumItalian;
+        mLarge_Italian = largeItalian;
+        mMedium_Stuffed_Crust = mediumStuffedCrust;
+        mLarge_Stuffed_Crust = largeStuffedCrust;
+        mSmall_Original = smallOriginal;
+        mMedium_Original = mediumOriginal;
+        mLarge_Original = largeOriginal;
+        mExtra_Large_Original = extraLargeOriginal;
+        mSmall_Gluten_Free = smallGlutenFree;
+        mPersonal_Original_Pan = personalOriginalPan;
+        mMedium_Original_Pan = mediumOriginalPan;
+        mLarge_Original_Pan = largeOriginalPan;
+        mMedium_Hand_Tossed = mediumHandTossed;
+        mLarge_Hand_Tossed = largeHandTossed;
+        
         mProperRadius = properRadius;
         mToppingPrice = toppingPrice;
+        mQuality = quality;
+        
         mPepperoni = pepperoni;
         mItalian_sausage = italianSausage;
         mMeatball = meatball;
@@ -135,14 +226,6 @@ public class Restaurant implements Serializable
 
     public void setRestaurant(String restaurant) {
         mRestaurant = restaurant;
-    }
-
-    public String getStyle() {
-        return mStyle;
-    }
-
-    public void setStyle(String style) {
-        mStyle = style;
     }
 
     public double getProperRadius() {
@@ -377,5 +460,187 @@ public class Restaurant implements Serializable
         mFresh_spinach = fresh_spinach;
     }
 
+    public double getPersonal_Thin_Crust() {
+        return mPersonal_Thin_Crust;
+    }
 
+    public void setPersonal_Thin_Crust(double Personal_Thin_Crust) {
+        mPersonal_Thin_Crust = Personal_Thin_Crust;
+    }
+
+    public double getSmall_Thin_Crust() {
+        return mSmall_Thin_Crust;
+    }
+
+    public void setSmall_Thin_Crust(double Small_Thin_Crust) {
+        mSmall_Thin_Crust = Small_Thin_Crust;
+    }
+
+    public double getMedium_Thin_Crust() {
+        return mMedium_Thin_Crust;
+    }
+
+    public void setMedium_Thin_Crust(double Medium_Thin_Crust) {
+        mMedium_Thin_Crust = Medium_Thin_Crust;
+    }
+
+    public double getLarge_Thin_Crust() {
+        return mLarge_Thin_Crust;
+    }
+
+    public void setLarge_Thin_Crust(double Large_Thin_Crust) {
+        mLarge_Thin_Crust = Large_Thin_Crust;
+    }
+
+    public double getPersonal_New_York() {
+        return mPersonal_New_York;
+    }
+
+    public void setPersonal_New_York(double Personal_New_York) {
+        mPersonal_New_York = Personal_New_York;
+    }
+
+    public double getSmall_New_York() {
+        return mSmall_New_York;
+    }
+
+    public void setSmall_New_York(double Small_New_York) {
+        mSmall_New_York = Small_New_York;
+    }
+
+    public double getMedium_New_York() {
+        return mMedium_New_York;
+    }
+
+    public void setMedium_New_York(double Medium_New_York) {
+        mMedium_New_York = Medium_New_York;
+    }
+
+    public double getMedium_Italian() {
+        return mMedium_Italian;
+    }
+
+    public void setMedium_Italian(double Medium_Italian) {
+        mMedium_Italian = Medium_Italian;
+    }
+
+    public double getSmall_Original() {
+        return mSmall_Original;
+    }
+
+    public void setSmall_Original(double Small_Original) {
+        mSmall_Original = Small_Original;
+    }
+
+    public double getLarge_New_York() {
+        return mLarge_New_York;
+    }
+
+    public void setLarge_New_York(double Large_New_York) {
+        mLarge_New_York = Large_New_York;
+    }
+
+    public double getLarge_Italian() {
+        return mLarge_Italian;
+    }
+
+    public void setLarge_Italian(double Large_Italian) {
+        mLarge_Italian = Large_Italian;
+    }
+
+    public double getMedium_Stuffed_Crust() {
+        return mMedium_Stuffed_Crust;
+    }
+
+    public void setMedium_Stuffed_Crust(double Medium_Stuffed_Crust) {
+        mMedium_Stuffed_Crust = Medium_Stuffed_Crust;
+    }
+
+    public double getLarge_Stuffed_Crust() {
+        return mLarge_Stuffed_Crust;
+    }
+
+    public void setLarge_Stuffed_Crust(double Large_Stuffed_Crust) {
+        mLarge_Stuffed_Crust = Large_Stuffed_Crust;
+    }
+
+    public double getMedium_Original() {
+        return mMedium_Original;
+    }
+
+    public void setMedium_Original(double Medium_Original) {
+        mMedium_Original = Medium_Original;
+    }
+
+    public double getLarge_Original() {
+        return mLarge_Original;
+    }
+
+    public void setLarge_Original(double Large_Original) {
+        mLarge_Original = Large_Original;
+    }
+
+    public double getExtra_Large_Original() {
+        return mExtra_Large_Original;
+    }
+
+    public void setExtra_Large_Original(double Extra_Large_Original) {
+        mExtra_Large_Original = Extra_Large_Original;
+    }
+
+    public double getSmall_Gluten_Free() {
+        return mSmall_Gluten_Free;
+    }
+
+    public void setSmall_Gluten_Free(double Small_Gluten_Free) {
+        mSmall_Gluten_Free = Small_Gluten_Free;
+    }
+
+    public double getPersonal_Original_Pan() {
+        return mPersonal_Original_Pan;
+    }
+
+    public void setPersonal_Original_Pan(double Personal_Original_Pan) {
+        mPersonal_Original_Pan = Personal_Original_Pan;
+    }
+
+    public double getMedium_Original_Pan() {
+        return mMedium_Original_Pan;
+    }
+
+    public void setMedium_Original_Pan(double Medium_Original_Pan) {
+        mMedium_Original_Pan = Medium_Original_Pan;
+    }
+
+    public double getLarge_Original_Pan() {
+        return mLarge_Original_Pan;
+    }
+
+    public void setLarge_Original_Pan(double Large_Original_Pan) {
+        mLarge_Original_Pan = Large_Original_Pan;
+    }
+
+    public double getMedium_Hand_Tossed() {
+        return mMedium_Hand_Tossed;
+    }
+
+    public void setMedium_Hand_Tossed(double Medium_Hand_Tossed) {
+        mMedium_Hand_Tossed = Medium_Hand_Tossed;
+    }
+
+    public double getLarge_Hand_Tossed() {
+        return mLarge_Hand_Tossed;
+    }
+
+    public void setLarge_Hand_Tossed(double Large_Hand_Tossed) {
+        mLarge_Hand_Tossed = Large_Hand_Tossed;
+    }
+
+    public double getQuality() {
+        return mQuality;
+    }
+
+    public void setQuality(double mQuality) {
+        this.mQuality = mQuality;
+    }
 }
