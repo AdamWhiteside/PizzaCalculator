@@ -1,6 +1,7 @@
 package com.pizza_pi.database;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -642,6 +643,29 @@ public class Restaurant implements Serializable
         return mQuality;
     }
 
+    public List<String> getThinCrust()
+    {
+        List<String> thinCrusts = new ArrayList<>();
+        if(getPersonal_Thin_Crust() != 0.0)
+        {
+            thinCrusts.add("Personal_Thin_Crust");
+        }
+        if(getSmall_Thin_Crust() != 0.0)
+        {
+            thinCrusts.add("Small_Thin_Crust");
+        }
+        if(getMedium_Thin_Crust() != 0.0)
+        {
+            thinCrusts.add("Medium_Thin_Crust");
+        }
+        if(getLarge_Thin_Crust() != 0.0)
+        {
+            thinCrusts.add("Large_Thin_Crust");
+        }
+        return thinCrusts;
+    }
+
+    
     public void setQuality(double mQuality) {
         this.mQuality = mQuality;
     }
@@ -761,98 +785,274 @@ public class Restaurant implements Serializable
         return toppings;
     }
 
+    /**
+     * Finds and gets all the styles and sizes that a restaurant serves
+     * @return List of strings that are the styles and sizes
+     */
+    public List<String> getStylesAndSizes()
+    {
+        List<String> StylesAndSizes = new ArrayList<>();
+
+        if(getPersonal_Thin_Crust() != 0.0)
+        {
+            StylesAndSizes.add("Personal_Thin_Crust");
+        }
+        if(getSmall_Thin_Crust() != 0.0)
+        {
+            StylesAndSizes.add("Small_Thin_Crust");
+        }
+        if(getMedium_Thin_Crust() != 0.0)
+        {
+            StylesAndSizes.add("Medium_Thin_Crust");
+        }
+        if(getLarge_Thin_Crust() != 0.0)
+        {
+            StylesAndSizes.add("Large_Thin_Crust");
+        }
+        if(getPersonal_New_York() != 0.0)
+        {
+            StylesAndSizes.add("Personal_New_York");
+        }
+        if(getSmall_New_York() != 0.0)
+        {
+            StylesAndSizes.add("Small_New_York");
+        }
+        if(getMedium_New_York() != 0.0)
+        {
+            StylesAndSizes.add("Medium_New_York");
+        }
+        if(getLarge_New_York() != 0.0)
+        {
+            StylesAndSizes.add("Large_New_York");
+        }
+        if(getMedium_Italian() != 0.0)
+        {
+            StylesAndSizes.add("Medium_Italian");
+        }
+        if(getLarge_Italian() != 0.0)
+        {
+            StylesAndSizes.add("Large_Italian");
+        }
+        if(getMedium_Stuffed_Crust() != 0.0)
+        {
+            StylesAndSizes.add("Medium_Stuffed_Crust");
+        }
+        if(getLarge_Stuffed_Crust() != 0.0)
+        {
+            StylesAndSizes.add("Large_Stuffed_Crust");
+        }
+        if(getSmall_Original() != 0.0)
+        {
+            StylesAndSizes.add("Small_Original");
+        }
+        if(getMedium_Original() != 0.0)
+        {
+            StylesAndSizes.add("Medium_Original");
+        }
+        if(getLarge_Original() != 0.0)
+        {
+            StylesAndSizes.add("Large_Original");
+        }
+        if(getExtra_Large_Original() != 0.0)
+        {
+            StylesAndSizes.add("Extra_Large_Original");
+        }
+        if(getSmall_Gluten_Free() != 0.0)
+        {
+            StylesAndSizes.add("Small_Gluten_Free");
+        }
+        if(getPersonal_Original_Pan() != 0.0)
+        {
+            StylesAndSizes.add("Personal_Original_Pan");
+        }
+        if(getMedium_Original_Pan() != 0.0)
+        {
+            StylesAndSizes.add("Medium_Original_Pan");
+        }
+        if(getLarge_Original_Pan() != 0.0)
+        {
+            StylesAndSizes.add("Large_Original_Pan");
+        }
+        if(getMedium_Hand_Tossed() != 0.0)
+        {
+            StylesAndSizes.add("Medium_Hand_Tossed");
+        }
+        if(getLarge_Hand_Tossed() != 0.0)
+        {
+            StylesAndSizes.add("Large_Hand_Tossed");
+        }
+        return StylesAndSizes;
+    }
+
+    /**
+     * Returns all the styles that a restaurant has
+     * @return a list of strings of styles
+     */
     public List<String> getStyles()
     {
         List<String> styles = new ArrayList<>();
 
-        if(getPersonal_Thin_Crust() != 0.0)
+        if(getPersonal_Thin_Crust() != 0.0 || getSmall_Thin_Crust() != 0.0 ||
+                getMedium_Thin_Crust() != 0.0 || getLarge_Thin_Crust() != 0.0)
         {
-            styles.add("Personal_Thin_Crust");
+            styles.add("Thin_Crust");
         }
-        if(getSmall_Thin_Crust() != 0.0)
+        if(getPersonal_New_York() != 0.0 || getSmall_New_York() != 0.0 ||
+                getMedium_New_York() != 0.0 || getLarge_New_York() != 0.0)
         {
-            styles.add("Small_Thin_Crust");
+            styles.add("New_York");
         }
-        if(getMedium_Thin_Crust() != 0.0)
+        if(getMedium_Italian() != 0.0 || getLarge_Italian() != 0.0)
         {
-            styles.add("Medium_Thin_Crust");
+            styles.add("Italian");
         }
-        if(getLarge_Thin_Crust() != 0.0)
+        if(getMedium_Stuffed_Crust() != 0.0 || getLarge_Stuffed_Crust() != 0.0)
         {
-            styles.add("Large_Thin_Crust");
+            styles.add("Stuffed_Crust");
         }
-        if(getPersonal_New_York() != 0.0)
+        if(getSmall_Original() != 0.0 || getMedium_Original() != 0.0 ||
+                getLarge_Original() != 0.0 || getExtra_Large_Original() != 0.0)
         {
-            styles.add("Personal_New_York");
-        }
-        if(getSmall_New_York() != 0.0)
-        {
-            styles.add("Small_New_York");
-        }
-        if(getMedium_New_York() != 0.0)
-        {
-            styles.add("Medium_New_York");
-        }
-        if(getLarge_New_York() != 0.0)
-        {
-            styles.add("Large_New_York");
-        }
-        if(getMedium_Italian() != 0.0)
-        {
-            styles.add("Medium_Italian");
-        }
-        if(getLarge_Italian() != 0.0)
-        {
-            styles.add("Large_Italian");
-        }
-        if(getMedium_Stuffed_Crust() != 0.0)
-        {
-            styles.add("Medium_Stuffed_Crust");
-        }
-        if(getLarge_Stuffed_Crust() != 0.0)
-        {
-            styles.add("Large_Stuffed_Crust");
-        }
-        if(getSmall_Original() != 0.0)
-        {
-            styles.add("Small_Original");
-        }
-        if(getMedium_Original() != 0.0)
-        {
-            styles.add("Medium_Original");
-        }
-        if(getLarge_Original() != 0.0)
-        {
-            styles.add("Large_Original");
-        }
-        if(getExtra_Large_Original() != 0.0)
-        {
-            styles.add("Extra_Large_Original");
+            styles.add("Original");
         }
         if(getSmall_Gluten_Free() != 0.0)
         {
-            styles.add("Small_Gluten_Free");
+            styles.add("Gluten_Free");
         }
-        if(getPersonal_Original_Pan() != 0.0)
+        if(getPersonal_Original_Pan() != 0.0 || getMedium_Original_Pan() != 0.0 ||
+                getLarge_Original_Pan() != 0.0)
         {
-            styles.add("Personal_Original_Pan");
+            styles.add("Original_Pan");
         }
-        if(getMedium_Original_Pan() != 0.0)
+        if(getMedium_Hand_Tossed() != 0.0 || getLarge_Hand_Tossed() != 0.0)
         {
-            styles.add("Medium_Original_Pan");
-        }
-        if(getLarge_Original_Pan() != 0.0)
-        {
-            styles.add("Large_Original_Pan");
-        }
-        if(getMedium_Hand_Tossed() != 0.0)
-        {
-            styles.add("Medium_Hand_Tossed");
-        }
-        if(getLarge_Hand_Tossed() != 0.0)
-        {
-            styles.add("Large_Hand_Tossed");
+            styles.add("Hand_Tossed");
         }
         return styles;
+    }
+
+    /**
+     * Given a style of pizza returns all available sizes of that pizza.
+     * @param style
+     * @return
+     */
+    public List<String> getSizes(String style)
+    {
+        List<String> sizes = new ArrayList<>();
+        List<String> stylesAndSizes = new ArrayList<>();
+        stylesAndSizes = this.getStylesAndSizes();
+        if(style.equalsIgnoreCase("Thin_Crust"))
+        {
+            if(stylesAndSizes.contains("Personal_Thin_Crust"))
+            {
+                sizes.add("Personal");
+            }
+            if(stylesAndSizes.contains("Small_Thin_Crust"))
+            {
+                sizes.add("Small");
+            }
+            if(stylesAndSizes.contains("Medium_Thin_Crust"))
+            {
+                sizes.add("Medium");
+            }
+            if(stylesAndSizes.contains("Large_Thin_Crust"))
+            {
+                sizes.add("Large");
+            }
+        }
+        if(style.equalsIgnoreCase("New_York"))
+        {
+            if(stylesAndSizes.contains("Personal_New_York"))
+            {
+                sizes.add("Personal");
+            }
+            if(stylesAndSizes.contains("Small_New_York"))
+            {
+                sizes.add("Small");
+            }
+            if(stylesAndSizes.contains("Medium_New_York"))
+            {
+                sizes.add("Medium");
+            }
+            if(stylesAndSizes.contains("Large_New_York"))
+            {
+                sizes.add("Large");
+            }
+        }
+        if(style.equalsIgnoreCase("Italian"))
+        {
+            if(stylesAndSizes.contains("Medium_Italian"))
+            {
+                sizes.add("Medium");
+            }
+            if(stylesAndSizes.contains("Large_Italian"))
+            {
+                sizes.add("Large");
+            }
+        }
+        if(style.equalsIgnoreCase( "Stuffed_Crust"))
+        {
+            if(stylesAndSizes.contains("Medium_Stuffed_Crust"))
+            {
+                sizes.add("Medium");
+            }
+            if(stylesAndSizes.contains("Large_Stuffed_Crust"))
+            {
+                sizes.add("Large");
+            }
+        }
+        if(style.equalsIgnoreCase("Original"))
+        {
+            if(stylesAndSizes.contains("Small_Original"))
+            {
+                sizes.add("Small");
+            }
+            if(stylesAndSizes.contains("Medium_Original"))
+            {
+                sizes.add("Medium");
+            }
+            if(stylesAndSizes.contains("Large_Original"))
+            {
+                sizes.add("Large");
+            }
+            if(stylesAndSizes.contains("Extra_Large_Original"))
+            {
+                sizes.add("Extra_Large");
+            }
+        }
+        if(style.equalsIgnoreCase("Gluten_Free"))
+        {
+            if(stylesAndSizes.contains("Small_Gluten_Free"))
+            {
+                sizes.add("Small");
+            }
+        }
+        if(style.equalsIgnoreCase("Original_Pan"))
+        {
+            if(stylesAndSizes.contains("Personal_Original_Pan"))
+            {
+                sizes.add("Personal");
+            }
+            if(stylesAndSizes.contains("Medium_Original_Pan"))
+            {
+                sizes.add("Medium");
+            }
+            if(stylesAndSizes.contains("Large_Original_Pan"))
+            {
+                sizes.add("Large");
+            }
+        }
+        if(style.equalsIgnoreCase( "Hand_Tossed"))
+        {
+            if(stylesAndSizes.contains("Medium_Hand_Tossed"))
+            {
+                sizes.add("Medium");
+            }
+            if(stylesAndSizes.contains("Large_Hand_Tossed"))
+            {
+                sizes.add("Large");
+            }
+        }
+        return sizes;
     }
 }
