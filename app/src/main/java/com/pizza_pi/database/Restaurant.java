@@ -821,7 +821,7 @@ public class Restaurant implements Serializable
         {
             styles.add("Medium_Original");
         }
-        if(mLarge_Original != 0.0)
+        if(getLarge_Original() != 0.0)
         {
             styles.add("Large_Original");
         }
