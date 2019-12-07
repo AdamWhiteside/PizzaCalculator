@@ -153,7 +153,7 @@ public class Restaurant implements Serializable
                       double personalOriginalPan, double mediumOriginalPan, double largeOriginalPan, double mediumHandTossed,
                       double largeHandTossed
 
-    )
+   )
     {
         mId = UUID.randomUUID();
         
@@ -643,28 +643,6 @@ public class Restaurant implements Serializable
         return mQuality;
     }
 
-    public List<String> getThinCrust()
-    {
-        List<String> thinCrusts = new ArrayList<>();
-        if(getPersonal_Thin_Crust() != 0.0)
-        {
-            thinCrusts.add("Personal_Thin_Crust");
-        }
-        if(getSmall_Thin_Crust() != 0.0)
-        {
-            thinCrusts.add("Small_Thin_Crust");
-        }
-        if(getMedium_Thin_Crust() != 0.0)
-        {
-            thinCrusts.add("Medium_Thin_Crust");
-        }
-        if(getLarge_Thin_Crust() != 0.0)
-        {
-            thinCrusts.add("Large_Thin_Crust");
-        }
-        return thinCrusts;
-    }
-
     
     public void setQuality(double mQuality) {
         this.mQuality = mQuality;
@@ -1054,5 +1032,105 @@ public class Restaurant implements Serializable
             }
         }
         return sizes;
+    }
+
+    /**
+     * Given a string, the style and size of a pizza, returns a double, the price
+     * @param styleAndSize the requested features of a pizza
+     * @return a double that represents the price
+     */
+    public double getPrice(String styleAndSize)
+    {
+        double price = 0.0;
+        if(styleAndSize.equalsIgnoreCase("Personal_Thin_Crust"))
+        {
+            price = getPersonal_Thin_Crust();
+        }
+        if(styleAndSize.equalsIgnoreCase("Small_Thin_Crust"))
+        {
+            price = getSmall_Thin_Crust();
+        }
+        if(styleAndSize.equalsIgnoreCase("Medium_Thin_Crust"))
+        {
+            price = getMedium_Thin_Crust();
+        }
+        if(styleAndSize.equalsIgnoreCase("Large_Thin_Crust"))
+        {
+            price = getLarge_Thin_Crust();
+        }
+        if(styleAndSize.equalsIgnoreCase("Personal_New_York"))
+        {
+            price = getPersonal_New_York();
+        }
+        if(styleAndSize.equalsIgnoreCase("Small_New_York"))
+        {
+            price = getSmall_New_York();
+        }
+        if(styleAndSize.equalsIgnoreCase("Medium_New_York"))
+        {
+            price = getMedium_New_York();
+        }
+        if(styleAndSize.equalsIgnoreCase("Large_New_York"))
+        {
+            price = getLarge_New_York();
+        }
+        if(styleAndSize.equalsIgnoreCase("Medium_Italian"))
+        {
+            price = getMedium_Italian();
+        }
+        if(styleAndSize.equalsIgnoreCase("Large_Italian"))
+        {
+            price = getLarge_Italian();
+        }
+        if(styleAndSize.equalsIgnoreCase("Medium_Stuffed_Crust"))
+        {
+            price = getMedium_Stuffed_Crust();
+        }
+        if(styleAndSize.equalsIgnoreCase("Large_Stuffed_Crust"))
+        {
+            price = getLarge_Stuffed_Crust();
+        }
+        if(styleAndSize.equalsIgnoreCase("Small_Original"))
+        {
+            price = getSmall_Original();
+        }
+        if(styleAndSize.equalsIgnoreCase("Medium_Original"))
+        {
+            price = getMedium_Original();
+        }
+        if(styleAndSize.equalsIgnoreCase("Large_Original"))
+        {
+            price = getLarge_Original();
+        }
+        if(styleAndSize.equalsIgnoreCase("Extra_Large_Original"))
+        {
+            price = getExtra_Large_Original();
+        }
+        if(styleAndSize.equalsIgnoreCase("Small_Gluten_Free"))
+        {
+            price = getSmall_Gluten_Free();
+        }
+        if(styleAndSize.equalsIgnoreCase("Personal_Original_Pan"))
+        {
+            price = getPersonal_Original_Pan();
+        }
+        if(styleAndSize.equalsIgnoreCase("Medium_Original_Pan"))
+        {
+            price = getMedium_Original_Pan();
+        }
+        if(styleAndSize.equalsIgnoreCase("Large_Original_Pan"))
+        {
+            price = getLarge_Original_Pan();
+        }
+        if(styleAndSize.equalsIgnoreCase("Medium_Hand_Tossed"))
+        {
+            price = getMedium_Hand_Tossed();
+        }
+        if(styleAndSize.equalsIgnoreCase("Large_Hand_Tossed"))
+        {
+            price = getLarge_Hand_Tossed();
+        }
+
+        return price;
     }
 }
