@@ -1,6 +1,8 @@
 package com.pizza_pi.database;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -642,5 +644,215 @@ public class Restaurant implements Serializable
 
     public void setQuality(double mQuality) {
         this.mQuality = mQuality;
+    }
+
+    public List<String> getToppings()
+    {
+        List<String> toppings = new ArrayList<>();
+
+        if(isPepperoni())
+        {
+            toppings.add("Pepperoni");
+        }
+        if(isItalian_sausage())
+        {
+            toppings.add("Italian_Sausage");
+        }
+        if(isMeatball())
+        {
+            toppings.add("Meatball");
+        }
+        if(isHam())
+        {
+            toppings.add("Ham");
+        }
+        if(isBacon())
+        {
+            toppings.add("Bacon");
+        }
+        if(isGrilled_chicken())
+        {
+            toppings.add("Grilled_Chicken");
+        }
+        if(isBeef())
+        {
+            toppings.add("Beef");
+        }
+        if(isPork())
+        {
+            toppings.add("Pork");
+        }
+        if(isMushrooms())
+        {
+            toppings.add("Mushrooms");
+        }
+        if(isRoasted_spinach())
+        {
+            toppings.add("Roasted_Spinach");
+        }
+        if(isRed_onions())
+        {
+            toppings.add("Red_Onions");
+        }
+        if(isBlack_olives())
+        {
+            toppings.add("Black_Olives");
+        }
+        if(isGreen_bell_peppers())
+        {
+            toppings.add("Green_Bell_Peppers");
+        }
+        if(isBanana_peppers())
+        {
+            toppings.add("Banana_Peppers");
+        }
+        if(isPineapple())
+        {
+            toppings.add("Pineapple");
+        }
+        if(isJalapeno())
+        {
+            toppings.add("Jalapeno");
+        }
+        if(isRoma_tomatoes())
+        {
+            toppings.add("Roma_Tomatoes");
+        }
+        if(isPhilly_steak())
+        {
+            toppings.add("Philly_Steak");
+        }
+        if(isSausage())
+        {
+            toppings.add("Sausage");
+        }
+        if(isAnchovies())
+        {
+            toppings.add("Anchovies");
+        }
+        if(isCanadian_bacon())
+        {
+            toppings.add("Canadian_Bacon");
+        }
+        if(isSalami())
+        {
+            toppings.add("Pepperoni");
+        }
+        if(isOnions())
+        {
+            toppings.add("Pepperoni");
+        }
+        if(isGreen_olives())
+        {
+            toppings.add("Green_Olives");
+        }
+        if(isLettuce())
+        {
+            toppings.add("Lettuce");
+        }
+        if(isPickles())
+        {
+            toppings.add("Pickles");
+        }
+        if(isFresh_spinach())
+        {
+            toppings.add("Fresh_Spinach");
+        }
+        return toppings;
+    }
+
+    public List<String> getStyles()
+    {
+        List<String> styles = new ArrayList<>();
+
+        if(getPersonal_Thin_Crust() != 0.0)
+        {
+            styles.add("Personal_Thin_Crust");
+        }
+        if(getSmall_Thin_Crust() != 0.0)
+        {
+            styles.add("Small_Thin_Crust");
+        }
+        if(getMedium_Thin_Crust() != 0.0)
+        {
+            styles.add("Medium_Thin_Crust");
+        }
+        if(getLarge_Thin_Crust() != 0.0)
+        {
+            styles.add("Large_Thin_Crust");
+        }
+        if(getPersonal_New_York() != 0.0)
+        {
+            styles.add("Personal_New_York");
+        }
+        if(getSmall_New_York() != 0.0)
+        {
+            styles.add("Small_New_York");
+        }
+        if(getMedium_New_York() != 0.0)
+        {
+            styles.add("Medium_New_York");
+        }
+        if(getLarge_New_York() != 0.0)
+        {
+            styles.add("Large_New_York");
+        }
+        if(getMedium_Italian() != 0.0)
+        {
+            styles.add("Medium_Italian");
+        }
+        if(getLarge_Italian() != 0.0)
+        {
+            styles.add("Large_Italian");
+        }
+        if(getMedium_Stuffed_Crust() != 0.0)
+        {
+            styles.add("Medium_Stuffed_Crust");
+        }
+        if(getLarge_Stuffed_Crust() != 0.0)
+        {
+            styles.add("Large_Stuffed_Crust");
+        }
+        if(getSmall_Original() != 0.0)
+        {
+            styles.add("Small_Original");
+        }
+        if(getMedium_Original() != 0.0)
+        {
+            styles.add("Medium_Original");
+        }
+        if(mLarge_Original != 0.0)
+        {
+            styles.add("Large_Original");
+        }
+        if(getExtra_Large_Original() != 0.0)
+        {
+            styles.add("Extra_Large_Original");
+        }
+        if(getSmall_Gluten_Free() != 0.0)
+        {
+            styles.add("Small_Gluten_Free");
+        }
+        if(getPersonal_Original_Pan() != 0.0)
+        {
+            styles.add("Personal_Original_Pan");
+        }
+        if(getMedium_Original_Pan() != 0.0)
+        {
+            styles.add("Medium_Original_Pan");
+        }
+        if(getLarge_Original_Pan() != 0.0)
+        {
+            styles.add("Large_Original_Pan");
+        }
+        if(getMedium_Hand_Tossed() != 0.0)
+        {
+            styles.add("Medium_Hand_Tossed");
+        }
+        if(getLarge_Hand_Tossed() != 0.0)
+        {
+            styles.add("Large_Hand_Tossed");
+        }
+        return styles;
     }
 }

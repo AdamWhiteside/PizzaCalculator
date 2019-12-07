@@ -9,7 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import com.pizza_pi.database.RestaurantCursorWrapper;
+import com.pizza_pi.database.RestaurantDbSchema;
+import com.pizza_pi.database.RestaurantBaseHelper;
+
 import static com.pizza_pi.database.RestaurantDbSchema.*;
+
 
 /**
  * Maintains the collection of Restaurant's
@@ -80,6 +85,34 @@ public class RestaurantBase {
         Restaurant currentPlace = Restaurants.get(1);
         return Restaurants;
     }
+
+    public List<String> getRestaurantNames()
+    {
+        List<Restaurant> restaurants = new ArrayList<>();
+        RestaurantCursorWrapper cursor = queryRestaurants(null, null);
+
+        try {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                restaurants.add(cursor.getRestaurant());
+                cursor.moveToNext();
+            }
+        }
+        finally
+        {
+            cursor.close();
+        }
+
+        Restaurant currentPlace = restaurants.get(1);
+        List<String> names = new ArrayList<>();
+
+        for(int i = 0; i < restaurants.size(); i++)
+        {
+            names.add(i, restaurants.get(i).getRestaurant());
+        }
+        return names;
+    }
+
 
     /**
      * Given a specific Restaurant id either returns the Restaurant with that id
