@@ -1,6 +1,4 @@
-// TODO
-// Update for use with DB
-//   Likely return to "orderCalc" along this route
+
 package com.pizza_pi;
 
 import java.util.*;

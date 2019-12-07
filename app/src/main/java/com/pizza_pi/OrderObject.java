@@ -26,8 +26,8 @@ public class OrderObject implements Comparable<OrderObject>{
 
     @Override
     public int compareTo(OrderObject obj) {
-        if (getPrice() < obj.getPrice()) return 1;
-        if (getPrice() > obj.getPrice()) return -1;
+        if (getPrice() < obj.getPrice()) return -1;
+        if (getPrice() > obj.getPrice()) return 1;
         return 0;
     }
 }
