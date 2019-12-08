@@ -19,6 +19,7 @@ public class PermEngine {
 
     public static LinkedList<OrderObject> permProcessor(PiSet gimme) {
         whiteLister(gimme);
+        blackLister(gimme);
 
 
         gimme.setFoodUnits(gimme.getPeople()*100);
@@ -59,6 +60,19 @@ public class PermEngine {
     private static void whiteLister(PiSet gimme) {
         if (gimme.getWhiteB()) {
             gimme.setrestaurant(gimme.getWhitelist());
+        }
+    }
+
+    // This function checks to see if the user decided to use a blacklist of restaurants and
+    // updates their data to reflect it
+    private static void blackLister(PiSet gimme) {
+        List<String> postBlack = gimme.getrestaurant();
+
+        if (gimme.getBlackB()) {
+            for (String desu : gimme.getBlacklist()) {
+                postBlack.remove(desu);
+            }
+            gimme.setrestaurant(postBlack);
         }
     }
 
