@@ -1394,7 +1394,7 @@ public class Restaurant implements Serializable
      * @param styleAndSize the requested features of a pizza
      * @return a int that represents the food_units
      */
-    public int getmFood_units(String styleAndSize)
+    public int getFood_Units(String styleAndSize)
     {
         int food_units = 0;
         if(styleAndSize.equalsIgnoreCase("Personal_Thin_Crust"))
