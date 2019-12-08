@@ -1,6 +1,10 @@
 
 package com.pizza_pi;
 
+import com.pizza_pi.database.*;
+
+
+
 import java.util.*;
 
 public class PermEngine {
@@ -17,7 +21,8 @@ public class PermEngine {
     static List<String> fakeDBTopHut = new LinkedList<String>();
     static List<String> blacklist = new LinkedList<String>();
 
-
+    private static RestaurantBase database;
+    private static List<Restaurant> DBList = database.getRestaurants();
 
 
 
@@ -85,7 +90,7 @@ public class PermEngine {
     }
 
     // Goes through an OrderObject and updates its price field with the sum of all prices of contained PizzaObjects
-    // [[[DB ACCESS UPDATE NEEDED]]]
+    // [[[DB ACCESS UPDATE Irrel]]] -- not used?
     private static OrderObject orderCalc(OrderObject pi) {
         System.out.println("Got here: orderCalc");
         if (pi.getOrder().get(0) == null) return null;
@@ -96,7 +101,7 @@ public class PermEngine {
     }
 
     // Helper for orderCalc, will be deleted?
-    // [[[DB ACCESS UPDATE NEEDED]]]
+    // [[[DB ACCESS UPDATE Irrel]]] -- not source
     private static double typeValue(String type) {
         System.out.println("Got here: typeValue");
         switch (type) {
@@ -126,7 +131,7 @@ public class PermEngine {
     }
 
     // Called by the main window, passed something that is or can be converted to a PiSet Object
-    // [[[DB ACCESS UPDATE NEEDED]]]
+    // [[[DB ACCESS UPDATE Irrel]]]
     public static LinkedList<OrderObject> permProcessor(PiSet gimme) {
         System.out.println("Got here: permProcessorStart");
         gimme.setFoodUnits(gimme.getPeople()*100);
@@ -137,12 +142,13 @@ public class PermEngine {
         // This cycles restaurants and calls restperm on a per restaurant basis
         //
         for (String restaurant : fakeDBRest) {
+            Restaurant name = database.getRestaurantName(restaurant);
             System.out.println("Got here: permProcessorFor1");
             // add restaurant to blacklist if it doesn't have the desired toppings
             for (String topping : gimme.getToppings()) {
                 System.out.println("Got here: permProcessorFor1a");
-                // [[[DB ACCESS UPDATE NEEDED]]]
-                if (!fakeDBTopDom.contains(topping)) {
+                // [[[DB ACCESS UPDATED?]]]
+                if (name.getToppings().contains(topping)) {
                     System.out.println("Got here: permprocessorIf1");
                     blacklist.add(restaurant);
                     System.out.println("Got here: permprocessorIf1alt");
@@ -152,8 +158,8 @@ public class PermEngine {
             // add restaurant to blacklist if it doesn't have the desired type
             for (String type : gimme.getType()) {
                 System.out.println("Got here: permProcessorFor1b");
-                // [[[DB ACCESS UPDATE NEEDED]]]
-                if (!fakeDBTypeDom.contains(type)) {
+                // [[[DB ACCESS UPDATED?]]]
+                if (name.getStyles().contains(type)) {
                     System.out.println("Got here: permprocessorIf2");
                     blacklist.add(restaurant);
                     continue;
@@ -250,16 +256,16 @@ public class PermEngine {
     private static void restHelp(List<OrderObject> out, PiSet info, OrderObject indiv, String restaurant, List<String> types){
         System.out.println("Got here: restHelp");
         // add type at current location to indiv
-        // [[[DB ACCESS UPDATE NEEDED]]]
+        // [[[DB ACCESS UPDATE ELSEWHERE]]
         PizzaObject current = new PizzaObject(pizzaPrice(info.getToppings(), types.get(0), restaurant), types.get(0),
-                fuCount(types.get(0)), info.getToppings());
+                fuCount(types.get(0), restaurant), info.getToppings());
         indiv.getOrder().add(current);
 
         List<PizzaObject> temp = new LinkedList<>();
         OrderObject order = new OrderObject(0, temp);
         order.getOrder().addAll(indiv.getOrder());
 
-        if (fuCount(order) >= info.getFoodUnits()) {
+        if (fuCount(order, restaurant) >= info.getFoodUnits()) {
             System.out.println("Got here: restHelpIf1");
             orderPrice(order);
             out.add(order);
@@ -281,30 +287,48 @@ public class PermEngine {
     }
 
     // [[[DB ACCESS UPDATE NEEDED]]] REPLACE CONTENT WITH DB SEARCH FOR FOOD UNITS
-    private static int fuCount(OrderObject order) {
+    private static int fuCount(OrderObject order, String restaurant) {
         System.out.println("Got here: fuCount1");
+        Restaurant name = database.getRestaurantName(restaurant);
         int total = 0;
 
         for (PizzaObject pizza : order.getOrder()) {
-            total += foodUnitDB(pizza.getType());
+            total += name.getFood_Units(pizza.getType());
         }
 
         return total;
     }
-    private static int fuCount(PizzaObject pizza) {
+    private static int fuCount(PizzaObject pizza, String restaurant) {
         System.out.println("Got here: fuCount2");
-        return foodUnitDB(pizza.getType());
+        Restaurant name = database.getRestaurantName(restaurant);
+        int total = 0;
+
+        total += name.getFood_Units(pizza.getType());
+
+        return total;
     }
-    private static int fuCount(String type) {
+    private static int fuCount(String type, String restaurant) {
         System.out.println("Got here: fuCount3");
-        return (int)typeValue(type);
+        Restaurant name = database.getRestaurantName(restaurant);
+        int total = 0;
+
+        total += name.getFood_Units(type);
+
+        return total;
     }
 
-    // [[[DB ACCESS UPDATE NEEDED]]]
-    private static double pizzaPrice(List<String> top, String type, String Restaurant) {
+    // [[[DB ACCESS UPDATED?]]]
+    private static double pizzaPrice(List<String> top, String type, String restaurant) {
+        double topPrice = 0.0;
+        Restaurant name = database.getRestaurantName(restaurant);
+        if (top != null) {
+            topPrice += name.getToppingPrice();
+        }
+
+        double totalPrice = topPrice+name.getPrice(type);
+
         System.out.println("Got here: pizzaPrice");
-        // make this return based on a search of the DB
-        return typeValue(type);
+        return totalPrice;
     }
 
 
@@ -319,6 +343,50 @@ public class PermEngine {
 
         order.setPrice(price);
     }
+
+
+    private static boolean checkTopping(String topping) {
+        boolean found = false;
+
+
+
+        return found;
+    }
+
+    private static void dbTestMethod() {
+        // check if topping exists in restaurant
+        String name1 = "Dominos";
+        String topping = "Pepperoni";
+
+        Restaurant name = database.getRestaurantName(name1);
+        name.getToppings().contains(topping);
+
+
+        // check if type exists in restaurant
+        String type = "Italian";
+
+        // Get list of sizes within a type
+
+
+
+        // find price of a size of pizza at a restaurant
+        String size = "small_Italian";
+
+
+        // find food units of a size of pizza at a restaurant
+
+
+        // Get list of restaurants, types, toppings, sizes(?)
+
+        List<Restaurant> straunts = database.getRestaurants(); // as objects
+        List<String> stringaunt = database.getRestaurantNames(); // as strings
+        List<String> types = name.getStyles(); // types for a restaurant
+        List<String> toppings = name.getToppings(); // toppings for a restaurant
+
+
+
+    }
+
 
     //private void sortOut(List<OrderObject> out) {
     //out.sort(Comparator.comparing(OrderObject::getPrice()));
