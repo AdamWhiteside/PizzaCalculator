@@ -18,6 +18,9 @@ public class PermEngine {
     // Called by the main window, passed something that is or can be converted to a PiSet Object
 
     public static LinkedList<OrderObject> permProcessor(PiSet gimme) {
+        whiteLister(gimme);
+
+
         gimme.setFoodUnits(gimme.getPeople()*100);
         LinkedList<OrderObject> out = new LinkedList<OrderObject>();
 
@@ -49,6 +52,14 @@ public class PermEngine {
         Collections.sort(out);
         cullDups(out);
         return out;
+    }
+
+    // This function checks to see if the user decided to use a whitelist of restaurants and
+    // updates their data to reflect it
+    private static void whiteLister(PiSet gimme) {
+        if (gimme.getWhiteB()) {
+            gimme.setrestaurant(gimme.getWhitelist());
+        }
     }
 
 
