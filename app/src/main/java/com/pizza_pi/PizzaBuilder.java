@@ -26,5 +26,19 @@ public class PizzaBuilder {
     public void setToppingPrice(double toppingPrice) {
         mToppingPrice = toppingPrice;
     }
+    private static PizzaBuilder mInstance = null;
 
+    public int toppingValuePep;
+    public int toppingValueSau;
+    public int toppingValueChe;
+
+    protected PizzaBuilder(){}
+
+    public static synchronized PizzaBuilder getInstance() {
+        if(null == mInstance){
+            mInstance = new PizzaBuilder();
+        }
+        return mInstance;
+    }
 }
+
