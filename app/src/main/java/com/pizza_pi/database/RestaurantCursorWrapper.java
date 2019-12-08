@@ -54,6 +54,30 @@ public class RestaurantCursorWrapper extends CursorWrapper
         double toppingPrice = getDouble(getColumnIndex(RestaurantTable.Cols.TOPPING_PRICE));
         double quality = getDouble(getColumnIndex(RestaurantTable.Cols.TOPPING_PRICE));
 
+        int personal_Thin_Crust_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.PERSONAL_THIN_CRUST_FOOD_UNITS));
+        int small_Thin_Crust_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.SMALL_THIN_CRUST_FOOD_UNITS));
+        int medium_Thin_Crust_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.MEDIUM_THIN_CRUST_FOOD_UNITS));
+        int large_Thin_Crust_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.LARGE_THIN_CRUST_FOOD_UNITS));
+        int personal_New_York_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.PERSONAL_NEW_YORK_FOOD_UNITS));
+        int small_New_York_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.SMALL_NEW_YORK_FOOD_UNITS));
+        int medium_New_York_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.MEDIUM_NEW_YORK_FOOD_UNITS));
+        int large_New_York_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.LARGE_NEW_YORK_FOOD_UNITS));
+        int medium_Italian_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.MEDIUM_ITALIAN_FOOD_UNITS));
+        int large_Italian_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.LARGE_ITALIAN_FOOD_UNITS));
+        int medium_Stuffed_Crust_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.MEDIUM_STUFFED_CRUST_FOOD_UNITS));
+        int large_Stuffed_Crust_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.LARGE_STUFFED_CRUST_FOOD_UNITS));
+        int small_Original_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.SMALL_ORIGINAL_FOOD_UNITS));
+        int medium_Original_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.MEDIUM_ORIGINAL_FOOD_UNITS));
+        int large_Original_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.LARGE_ORIGINAL_FOOD_UNITS));
+        int extra_Large_Original_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.EXTRA_LARGE_ORIGINAL_FOOD_UNITS));
+        int small_Gluten_Free_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.SMALL_GLUTEN_FREE_FOOD_UNITS));
+        int personal_Original_Pan_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.PERSONAL_ORIGINAL_PAN_FOOD_UNITS));
+        int medium_Original_Pan_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.MEDIUM_ORIGINAL_PAN_FOOD_UNITS));
+        int large_Original_Pan_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.LARGE_ORIGINAL_PAN_FOOD_UNITS));
+        int medium_Hand_Tossed_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.MEDIUM_HAND_TOSSED_FOOD_UNITS));
+        int large_Hand_Tossed_Food_Units = getInt(getColumnIndex(RestaurantTable.Cols.LARGE_HAND_TOSSED_FOOD_UNITS));
+
+
         boolean pepperoni = getInt(getColumnIndex(RestaurantTable.Cols.PEPPERONI)) > 0;
         boolean italian_sausage = getInt(getColumnIndex(RestaurantTable.Cols.ITALIAN_SAUSAGE)) > 0;
         boolean meatball = getInt(getColumnIndex(RestaurantTable.Cols.MEATBALL)) > 0;
@@ -114,6 +138,30 @@ public class RestaurantCursorWrapper extends CursorWrapper
         Restaurant.setProperRadius(properRadius);
         Restaurant.setToppingPrice(toppingPrice);
         Restaurant.setQuality(quality);
+
+        Restaurant.setmPersonal_Thin_Crust_Food_Units(personal_Thin_Crust_Food_Units);
+        Restaurant.setmSmall_Thin_Crust_Food_Units(small_Thin_Crust_Food_Units);
+        Restaurant.setmMedium_Thin_Crust_Food_Units(medium_Thin_Crust_Food_Units);
+        Restaurant.setmLarge_Thin_Crust_Food_Units(large_Thin_Crust_Food_Units);
+        Restaurant.setmPersonal_New_York_Food_Units(personal_New_York_Food_Units);
+        Restaurant.setmSmall_New_York_Food_Units(small_New_York_Food_Units);
+        Restaurant.setmMedium_New_York_Food_Units(medium_New_York_Food_Units);
+        Restaurant.setmLarge_New_York_Food_Units(large_New_York_Food_Units);
+        Restaurant.setmMedium_Italian_Food_Units(medium_Italian_Food_Units);
+        Restaurant.setmLarge_Italian_Food_Units(large_Italian_Food_Units);
+        Restaurant.setmMedium_Stuffed_Crust_Food_Units(medium_Stuffed_Crust_Food_Units);
+        Restaurant.setmLarge_Stuffed_Crust_Food_Units(large_Stuffed_Crust_Food_Units);
+        Restaurant.setmSmall_Original_Food_Units(small_Original_Food_Units);
+        Restaurant.setmMedium_Original_Food_Units(medium_Original_Food_Units);
+        Restaurant.setmLarge_Original_Food_Units(large_Original_Food_Units);
+        Restaurant.setmExtra_Large_Original_Food_Units(extra_Large_Original_Food_Units);
+        Restaurant.setmSmall_Gluten_Free_Food_Units(small_Gluten_Free_Food_Units);
+        Restaurant.setmPersonal_Original_Pan_Food_Units(personal_Original_Pan_Food_Units);
+        Restaurant.setmMedium_Original_Pan_Food_Units(medium_Original_Pan_Food_Units);
+        Restaurant.setmLarge_Original_Pan_Food_Units(large_Original_Pan_Food_Units);
+        Restaurant.setmMedium_Hand_Tossed_Food_Units(medium_Hand_Tossed_Food_Units);
+        Restaurant.setmLarge_Hand_Tossed_Food_Units(large_Hand_Tossed_Food_Units);
+
 
         Restaurant.setPepperoni(pepperoni);
         Restaurant.setItalian_sausage(italian_sausage);

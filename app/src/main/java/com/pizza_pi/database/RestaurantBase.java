@@ -229,6 +229,30 @@ public class RestaurantBase {
         values.put(RestaurantTable.Cols.RESTAURANT, Restaurant.getRestaurant());
         values.put(RestaurantTable.Cols.QUALITY, Restaurant.getQuality());
 
+        values.put(RestaurantTable.Cols.PERSONAL_THIN_CRUST_FOOD_UNITS, Restaurant.getmPersonal_Thin_Crust_Food_Units());
+        values.put(RestaurantTable.Cols.SMALL_THIN_CRUST_FOOD_UNITS, Restaurant.getmSmall_Thin_Crust_Food_Units());
+        values.put(RestaurantTable.Cols.MEDIUM_THIN_CRUST_FOOD_UNITS, Restaurant.getmMedium_Thin_Crust_Food_Units());
+        values.put(RestaurantTable.Cols.LARGE_THIN_CRUST_FOOD_UNITS, Restaurant.getmLarge_Thin_Crust_Food_Units());
+        values.put(RestaurantTable.Cols.PERSONAL_NEW_YORK_FOOD_UNITS, Restaurant.getmPersonal_New_York_Food_Units());
+        values.put(RestaurantTable.Cols.SMALL_NEW_YORK_FOOD_UNITS, Restaurant.getmSmall_New_York_Food_Units());
+        values.put(RestaurantTable.Cols.MEDIUM_NEW_YORK_FOOD_UNITS, Restaurant.getmMedium_New_York_Food_Units());
+        values.put(RestaurantTable.Cols.LARGE_NEW_YORK_FOOD_UNITS, Restaurant.getmLarge_New_York_Food_Units());
+        values.put(RestaurantTable.Cols.MEDIUM_ITALIAN_FOOD_UNITS, Restaurant.getmMedium_Italian_Food_Units());
+        values.put(RestaurantTable.Cols.LARGE_ITALIAN_FOOD_UNITS, Restaurant.getmLarge_Italian_Food_Units());
+        values.put(RestaurantTable.Cols.MEDIUM_STUFFED_CRUST_FOOD_UNITS, Restaurant.getmMedium_Stuffed_Crust_Food_Units());
+        values.put(RestaurantTable.Cols.LARGE_STUFFED_CRUST_FOOD_UNITS, Restaurant.getmLarge_Stuffed_Crust_Food_Units());
+        values.put(RestaurantTable.Cols.SMALL_ORIGINAL_FOOD_UNITS, Restaurant.getmSmall_Original_Food_Units());
+        values.put(RestaurantTable.Cols.MEDIUM_ORIGINAL_FOOD_UNITS, Restaurant.getmMedium_Original_Food_Units());
+        values.put(RestaurantTable.Cols.LARGE_ORIGINAL_FOOD_UNITS, Restaurant.getmLarge_Original_Food_Units());
+        values.put(RestaurantTable.Cols.EXTRA_LARGE_ORIGINAL_FOOD_UNITS, Restaurant.getmExtra_Large_Original_Food_Units());
+        values.put(RestaurantTable.Cols.SMALL_GLUTEN_FREE_FOOD_UNITS, Restaurant.getmSmall_Gluten_Free_Food_Units());
+        values.put(RestaurantTable.Cols.PERSONAL_ORIGINAL_PAN_FOOD_UNITS, Restaurant.getmPersonal_Original_Pan_Food_Units());
+        values.put(RestaurantTable.Cols.MEDIUM_ORIGINAL_PAN_FOOD_UNITS, Restaurant.getmMedium_Original_Pan_Food_Units());
+        values.put(RestaurantTable.Cols.LARGE_ORIGINAL_PAN_FOOD_UNITS, Restaurant.getmLarge_Original_Pan_Food_Units());
+        values.put(RestaurantTable.Cols.MEDIUM_HAND_TOSSED_FOOD_UNITS, Restaurant.getmMedium_Hand_Tossed_Food_Units());
+        values.put(RestaurantTable.Cols.LARGE_HAND_TOSSED_FOOD_UNITS, Restaurant.getmLarge_Hand_Tossed_Food_Units());
+
+
         values.put(RestaurantTable.Cols.PERSONAL_THIN_CRUST, Restaurant.getPersonal_Thin_Crust());
         values.put(RestaurantTable.Cols.SMALL_THIN_CRUST, Restaurant.getSmall_Thin_Crust());
         values.put(RestaurantTable.Cols.MEDIUM_THIN_CRUST, Restaurant.getMedium_Thin_Crust());

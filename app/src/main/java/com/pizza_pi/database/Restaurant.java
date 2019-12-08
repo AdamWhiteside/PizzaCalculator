@@ -39,6 +39,29 @@ public class Restaurant implements Serializable
     private double mMedium_Hand_Tossed;
     private double mLarge_Hand_Tossed;
 
+    private int mPersonal_Thin_Crust_Food_Units;
+    private int mSmall_Thin_Crust_Food_Units;
+    private int mMedium_Thin_Crust_Food_Units;
+    private int mLarge_Thin_Crust_Food_Units;
+    private int mPersonal_New_York_Food_Units;
+    private int mSmall_New_York_Food_Units;
+    private int mMedium_New_York_Food_Units;
+    private int mLarge_New_York_Food_Units;
+    private int mMedium_Italian_Food_Units;
+    private int mLarge_Italian_Food_Units;
+    private int mMedium_Stuffed_Crust_Food_Units;
+    private int mLarge_Stuffed_Crust_Food_Units;
+    private int mSmall_Original_Food_Units;
+    private int mMedium_Original_Food_Units;
+    private int mLarge_Original_Food_Units;
+    private int mExtra_Large_Original_Food_Units;
+    private int mSmall_Gluten_Free_Food_Units;
+    private int mPersonal_Original_Pan_Food_Units;
+    private int mMedium_Original_Pan_Food_Units;
+    private int mLarge_Original_Pan_Food_Units;
+    private int mMedium_Hand_Tossed_Food_Units;
+    private int mLarge_Hand_Tossed_Food_Units;
+
 
     private double mProperRadius;
     private double mToppingPrice;
@@ -78,6 +101,7 @@ public class Restaurant implements Serializable
         this(UUID.randomUUID());
     }
 
+
     public Restaurant(UUID id)
     {
         mId = id;
@@ -112,6 +136,30 @@ public class Restaurant implements Serializable
         mToppingPrice = 0.0;
         mQuality = 0.0;
 
+        mPersonal_Thin_Crust_Food_Units = 0;
+        mSmall_Thin_Crust_Food_Units = 0;
+        mMedium_Thin_Crust_Food_Units = 0;
+        mLarge_Thin_Crust_Food_Units = 0;
+        mPersonal_New_York_Food_Units = 0;
+        mSmall_New_York_Food_Units = 0;
+        mMedium_New_York_Food_Units = 0;
+        mLarge_New_York_Food_Units = 0;
+        mMedium_Italian_Food_Units = 0;
+        mLarge_Italian_Food_Units = 0;
+        mMedium_Stuffed_Crust_Food_Units = 0;
+        mLarge_Stuffed_Crust_Food_Units = 0;
+        mSmall_Original_Food_Units = 0;
+        mMedium_Original_Food_Units = 0;
+        mLarge_Original_Food_Units = 0;
+        mExtra_Large_Original_Food_Units = 0;
+        mSmall_Gluten_Free_Food_Units = 0;
+        mPersonal_Original_Pan_Food_Units = 0;
+        mMedium_Original_Pan_Food_Units = 0;
+        mLarge_Original_Pan_Food_Units = 0;
+        mMedium_Hand_Tossed_Food_Units = 0;
+        mLarge_Hand_Tossed_Food_Units = 0;
+
+
         mPepperoni = false;
         mItalian_sausage = false;
         mMeatball = false;
@@ -141,7 +189,7 @@ public class Restaurant implements Serializable
         mFresh_spinach = false;
     }
 
-    public Restaurant(String Restaurant, Double properRadius, Double toppingPrice, double quality, boolean pepperoni, boolean italianSausage,
+    public Restaurant(String Restaurant, Double properRadius, Double toppingPrice, double quality, int foodUnit, boolean pepperoni, boolean italianSausage,
                       boolean meatball, boolean ham, boolean bacon, boolean grilledChicken, boolean beef, boolean pork,
                       boolean mushrooms, boolean roastedSpinach, boolean redOnions, boolean blackOlives, boolean greenBellPeppers,
                       boolean bananaPeppers, boolean pineapple, boolean jalapeno, boolean romaTomatoes, boolean phillySteak, boolean sausage,
@@ -151,9 +199,16 @@ public class Restaurant implements Serializable
                       double mediumItalian, double largeItalian, double mediumStuffedCrust, double largeStuffedCrust, double smallOriginal,
                       double mediumOriginal, double largeOriginal, double extraLargeOriginal, double smallGlutenFree,
                       double personalOriginalPan, double mediumOriginalPan, double largeOriginalPan, double mediumHandTossed,
-                      double largeHandTossed
+                      double largeHandTossed, int Personal_Thin_Crust_Food_Units, int Small_Thin_Crust_Food_Units,
+                      int Medium_Thin_Crust_Food_Units, int Large_Thin_Crust_Food_Units, int Personal_New_York_Food_Units,
+                      int Small_New_York_Food_Units, int Medium_New_York_Food_Units, int Large_New_York_Food_Units,
+                      int Medium_Italian_Food_Units, int Large_Italian_Food_Units, int Medium_Stuffed_Crust_Food_Units,
+                      int Large_Stuffed_Crust_Food_Units, int Small_Original_Food_Units, int Medium_Original_Food_Units,
+                      int Large_Original_Food_Units, int Extra_Large_Original_Food_Units, int Small_Gluten_Free_Food_Units,
+                      int Personal_Original_Pan_Food_Units, int Medium_Original_Pan_Food_Units, int Large_Original_Pan_Food_Units,
+                      int Medium_Hand_Tossed_Food_Units, int Large_Hand_Tossed_Food_Units
 
-   )
+    )
     {
         mId = UUID.randomUUID();
         
@@ -185,7 +240,31 @@ public class Restaurant implements Serializable
         mProperRadius = properRadius;
         mToppingPrice = toppingPrice;
         mQuality = quality;
-        
+
+        mPersonal_Thin_Crust_Food_Units = Personal_Thin_Crust_Food_Units;
+        mSmall_Thin_Crust_Food_Units = Small_Thin_Crust_Food_Units;
+        mMedium_Thin_Crust_Food_Units = Medium_Thin_Crust_Food_Units;
+        mLarge_Thin_Crust_Food_Units = Large_Thin_Crust_Food_Units;
+        mPersonal_New_York_Food_Units = Personal_New_York_Food_Units;
+        mSmall_New_York_Food_Units = Small_New_York_Food_Units;
+        mMedium_New_York_Food_Units = Medium_New_York_Food_Units;
+        mLarge_New_York_Food_Units = Large_New_York_Food_Units;
+        mMedium_Italian_Food_Units = Medium_Italian_Food_Units;
+        mLarge_Italian_Food_Units = Large_Italian_Food_Units;
+        mMedium_Stuffed_Crust_Food_Units = Medium_Stuffed_Crust_Food_Units;
+        mLarge_Stuffed_Crust_Food_Units = Large_Stuffed_Crust_Food_Units;
+        mSmall_Original_Food_Units = Small_Original_Food_Units;
+        mMedium_Original_Food_Units = Medium_Original_Food_Units;
+        mLarge_Original_Food_Units = Large_Original_Food_Units;
+        mExtra_Large_Original_Food_Units = Extra_Large_Original_Food_Units;
+        mSmall_Gluten_Free_Food_Units = Small_Gluten_Free_Food_Units;
+        mPersonal_Original_Pan_Food_Units = Personal_Original_Pan_Food_Units;
+        mMedium_Original_Pan_Food_Units = Medium_Original_Pan_Food_Units;
+        mLarge_Original_Pan_Food_Units = Large_Original_Pan_Food_Units;
+        mMedium_Hand_Tossed_Food_Units = Medium_Hand_Tossed_Food_Units;
+        mLarge_Hand_Tossed_Food_Units = Large_Hand_Tossed_Food_Units;
+
+
         mPepperoni = pepperoni;
         mItalian_sausage = italianSausage;
         mMeatball = meatball;
@@ -646,6 +725,182 @@ public class Restaurant implements Serializable
     
     public void setQuality(double mQuality) {
         this.mQuality = mQuality;
+    }
+
+    public int getmPersonal_Thin_Crust_Food_Units() {
+        return mPersonal_Thin_Crust_Food_Units;
+    }
+
+    public void setmPersonal_Thin_Crust_Food_Units(int mPersonal_Thin_Crust_Food_Units) {
+        this.mPersonal_Thin_Crust_Food_Units = mPersonal_Thin_Crust_Food_Units;
+    }
+
+    public int getmSmall_Thin_Crust_Food_Units() {
+        return mSmall_Thin_Crust_Food_Units;
+    }
+
+    public void setmSmall_Thin_Crust_Food_Units(int mSmall_Thin_Crust_Food_Units) {
+        this.mSmall_Thin_Crust_Food_Units = mSmall_Thin_Crust_Food_Units;
+    }
+
+    public int getmMedium_Thin_Crust_Food_Units() {
+        return mMedium_Thin_Crust_Food_Units;
+    }
+
+    public void setmMedium_Thin_Crust_Food_Units(int mMedium_Thin_Crust_Food_Units) {
+        this.mMedium_Thin_Crust_Food_Units = mMedium_Thin_Crust_Food_Units;
+    }
+
+    public int getmLarge_Thin_Crust_Food_Units() {
+        return mLarge_Thin_Crust_Food_Units;
+    }
+
+    public void setmLarge_Thin_Crust_Food_Units(int mLarge_Thin_Crust_Food_Units) {
+        this.mLarge_Thin_Crust_Food_Units = mLarge_Thin_Crust_Food_Units;
+    }
+
+    public int getmPersonal_New_York_Food_Units() {
+        return mPersonal_New_York_Food_Units;
+    }
+
+    public void setmPersonal_New_York_Food_Units(int mPersonal_New_York_Food_Units) {
+        this.mPersonal_New_York_Food_Units = mPersonal_New_York_Food_Units;
+    }
+
+    public int getmSmall_New_York_Food_Units() {
+        return mSmall_New_York_Food_Units;
+    }
+
+    public void setmSmall_New_York_Food_Units(int mSmall_New_York_Food_Units) {
+        this.mSmall_New_York_Food_Units = mSmall_New_York_Food_Units;
+    }
+
+    public int getmMedium_New_York_Food_Units() {
+        return mMedium_New_York_Food_Units;
+    }
+
+    public void setmMedium_New_York_Food_Units(int mMedium_New_York_Food_Units) {
+        this.mMedium_New_York_Food_Units = mMedium_New_York_Food_Units;
+    }
+
+    public int getmLarge_New_York_Food_Units() {
+        return mLarge_New_York_Food_Units;
+    }
+
+    public void setmLarge_New_York_Food_Units(int mLarge_New_York_Food_Units) {
+        this.mLarge_New_York_Food_Units = mLarge_New_York_Food_Units;
+    }
+
+    public int getmMedium_Italian_Food_Units() {
+        return mMedium_Italian_Food_Units;
+    }
+
+    public void setmMedium_Italian_Food_Units(int mMedium_Italian_Food_Units) {
+        this.mMedium_Italian_Food_Units = mMedium_Italian_Food_Units;
+    }
+
+    public int getmLarge_Italian_Food_Units() {
+        return mLarge_Italian_Food_Units;
+    }
+
+    public void setmLarge_Italian_Food_Units(int mLarge_Italian_Food_Units) {
+        this.mLarge_Italian_Food_Units = mLarge_Italian_Food_Units;
+    }
+
+    public int getmMedium_Stuffed_Crust_Food_Units() {
+        return mMedium_Stuffed_Crust_Food_Units;
+    }
+
+    public void setmMedium_Stuffed_Crust_Food_Units(int mMedium_Stuffed_Crust_Food_Units) {
+        this.mMedium_Stuffed_Crust_Food_Units = mMedium_Stuffed_Crust_Food_Units;
+    }
+
+    public int getmLarge_Stuffed_Crust_Food_Units() {
+        return mLarge_Stuffed_Crust_Food_Units;
+    }
+
+    public void setmLarge_Stuffed_Crust_Food_Units(int mLarge_Stuffed_Crust_Food_Units) {
+        this.mLarge_Stuffed_Crust_Food_Units = mLarge_Stuffed_Crust_Food_Units;
+    }
+
+    public int getmSmall_Original_Food_Units() {
+        return mSmall_Original_Food_Units;
+    }
+
+    public void setmSmall_Original_Food_Units(int mSmall_Original_Food_Units) {
+        this.mSmall_Original_Food_Units = mSmall_Original_Food_Units;
+    }
+
+    public int getmMedium_Original_Food_Units() {
+        return mMedium_Original_Food_Units;
+    }
+
+    public void setmMedium_Original_Food_Units(int mMedium_Original_Food_Units) {
+        this.mMedium_Original_Food_Units = mMedium_Original_Food_Units;
+    }
+
+    public int getmLarge_Original_Food_Units() {
+        return mLarge_Original_Food_Units;
+    }
+
+    public void setmLarge_Original_Food_Units(int mLarge_Original_Food_Units) {
+        this.mLarge_Original_Food_Units = mLarge_Original_Food_Units;
+    }
+
+    public int getmExtra_Large_Original_Food_Units() {
+        return mExtra_Large_Original_Food_Units;
+    }
+
+    public void setmExtra_Large_Original_Food_Units(int mExtra_Large_Original_Food_Units) {
+        this.mExtra_Large_Original_Food_Units = mExtra_Large_Original_Food_Units;
+    }
+
+    public int getmSmall_Gluten_Free_Food_Units() {
+        return mSmall_Gluten_Free_Food_Units;
+    }
+
+    public void setmSmall_Gluten_Free_Food_Units(int mSmall_Gluten_Free_Food_Units) {
+        this.mSmall_Gluten_Free_Food_Units = mSmall_Gluten_Free_Food_Units;
+    }
+
+    public int getmPersonal_Original_Pan_Food_Units() {
+        return mPersonal_Original_Pan_Food_Units;
+    }
+
+    public void setmPersonal_Original_Pan_Food_Units(int mPersonal_Original_Pan_Food_Units) {
+        this.mPersonal_Original_Pan_Food_Units = mPersonal_Original_Pan_Food_Units;
+    }
+
+    public int getmMedium_Original_Pan_Food_Units() {
+        return mMedium_Original_Pan_Food_Units;
+    }
+
+    public void setmMedium_Original_Pan_Food_Units(int mMedium_Original_Pan_Food_Units) {
+        this.mMedium_Original_Pan_Food_Units = mMedium_Original_Pan_Food_Units;
+    }
+
+    public int getmLarge_Original_Pan_Food_Units() {
+        return mLarge_Original_Pan_Food_Units;
+    }
+
+    public void setmLarge_Original_Pan_Food_Units(int mLarge_Original_Pan_Food_Units) {
+        this.mLarge_Original_Pan_Food_Units = mLarge_Original_Pan_Food_Units;
+    }
+
+    public int getmMedium_Hand_Tossed_Food_Units() {
+        return mMedium_Hand_Tossed_Food_Units;
+    }
+
+    public void setmMedium_Hand_Tossed_Food_Units(int mMedium_Hand_Tossed_Food_Units) {
+        this.mMedium_Hand_Tossed_Food_Units = mMedium_Hand_Tossed_Food_Units;
+    }
+
+    public int getmLarge_Hand_Tossed_Food_Units() {
+        return mLarge_Hand_Tossed_Food_Units;
+    }
+
+    public void setmLarge_Hand_Tossed_Food_Units(int mLarge_Hand_Tossed_Food_Units) {
+        this.mLarge_Hand_Tossed_Food_Units = mLarge_Hand_Tossed_Food_Units;
     }
 
     public List<String> getToppings()
@@ -1133,4 +1388,107 @@ public class Restaurant implements Serializable
 
         return price;
     }
+
+    /**
+     * Given a string, the style and size of a pizza, returns an int, the food_units
+     * @param styleAndSize the requested features of a pizza
+     * @return a int that represents the food_units
+     */
+    public int getmFood_units(String styleAndSize)
+    {
+        int food_units = 0;
+        if(styleAndSize.equalsIgnoreCase("Personal_Thin_Crust"))
+        {
+            food_units = getmPersonal_Thin_Crust_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Small_Thin_Crust"))
+        {
+            food_units = getmSmall_Thin_Crust_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Medium_Thin_Crust"))
+        {
+            food_units = getmMedium_Thin_Crust_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Large_Thin_Crust"))
+        {
+            food_units = getmLarge_Thin_Crust_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Personal_New_York"))
+        {
+            food_units = getmPersonal_New_York_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Small_New_York"))
+        {
+            food_units = getmSmall_New_York_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Medium_New_York"))
+        {
+            food_units = getmMedium_New_York_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Large_New_York"))
+        {
+            food_units = getmLarge_New_York_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Medium_Italian"))
+        {
+            food_units = getmMedium_Italian_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Large_Italian"))
+        {
+            food_units = getmLarge_Italian_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Medium_Stuffed_Crust"))
+        {
+            food_units = getmMedium_Stuffed_Crust_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Large_Stuffed_Crust"))
+        {
+            food_units = getmLarge_Stuffed_Crust_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Small_Original"))
+        {
+            food_units = getmSmall_Original_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Medium_Original"))
+        {
+            food_units = getmMedium_Original_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Large_Original"))
+        {
+            food_units = getmLarge_Original_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Extra_Large_Original"))
+        {
+            food_units = getmExtra_Large_Original_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Small_Gluten_Free"))
+        {
+            food_units = getmSmall_Gluten_Free_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Personal_Original_Pan"))
+        {
+            food_units = getmPersonal_Original_Pan_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Medium_Original_Pan"))
+        {
+            food_units = getmMedium_Original_Pan_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Large_Original_Pan"))
+        {
+            food_units = getmLarge_Original_Pan_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Medium_Hand_Tossed"))
+        {
+            food_units = getmMedium_Hand_Tossed_Food_Units();
+        }
+        if(styleAndSize.equalsIgnoreCase("Large_Hand_Tossed"))
+        {
+            food_units = getmLarge_Hand_Tossed_Food_Units();
+        }
+
+        return food_units;
+    }
+
+
+
 }

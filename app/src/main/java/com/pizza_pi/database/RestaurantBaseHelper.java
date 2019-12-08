@@ -53,9 +53,34 @@ public class RestaurantBaseHelper extends SQLiteOpenHelper
                 RestaurantTable.Cols.MEDIUM_HAND_TOSSED + ", " +
                 RestaurantTable.Cols.LARGE_HAND_TOSSED + ", " +
 
+
                 RestaurantTable.Cols.PROPER_RADIUS + ", " +
                 RestaurantTable.Cols.TOPPING_PRICE + ", " +
                 RestaurantTable.Cols.QUALITY + ", " +
+
+                RestaurantTable.Cols.PERSONAL_THIN_CRUST_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.SMALL_THIN_CRUST_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.MEDIUM_THIN_CRUST_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.LARGE_THIN_CRUST_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.PERSONAL_NEW_YORK_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.SMALL_NEW_YORK_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.MEDIUM_NEW_YORK_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.LARGE_NEW_YORK_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.MEDIUM_ITALIAN_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.LARGE_ITALIAN_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.MEDIUM_STUFFED_CRUST_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.LARGE_STUFFED_CRUST_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.SMALL_ORIGINAL_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.MEDIUM_ORIGINAL_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.LARGE_ORIGINAL_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.EXTRA_LARGE_ORIGINAL_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.SMALL_GLUTEN_FREE_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.PERSONAL_ORIGINAL_PAN_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.MEDIUM_ORIGINAL_PAN_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.LARGE_ORIGINAL_PAN_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.MEDIUM_HAND_TOSSED_FOOD_UNITS + ", " +
+                RestaurantTable.Cols.LARGE_HAND_TOSSED_FOOD_UNITS + ", " +
+
 
                 RestaurantTable.Cols.PEPPERONI + ", " +
                 RestaurantTable.Cols.ITALIAN_SAUSAGE + ", " +

@@ -43,6 +43,30 @@ public class RestaurantDbSchema {
             public static final String TOPPING_PRICE = "topping_price";
             public static final String QUALITY = "quality";
 
+            public static final String PERSONAL_THIN_CRUST_FOOD_UNITS ="personal_thin_crust_food_units";
+            public static final String SMALL_THIN_CRUST_FOOD_UNITS ="small_thin_crust_food_units";
+            public static final String MEDIUM_THIN_CRUST_FOOD_UNITS ="medium_thin_crust_food_units";
+            public static final String LARGE_THIN_CRUST_FOOD_UNITS ="large_thin_crust_food_units";
+            public static final String PERSONAL_NEW_YORK_FOOD_UNITS ="personal_new_york_food_units";
+            public static final String SMALL_NEW_YORK_FOOD_UNITS ="small_new_york_food_units";
+            public static final String MEDIUM_NEW_YORK_FOOD_UNITS ="medium_new_york_food_units";
+            public static final String LARGE_NEW_YORK_FOOD_UNITS ="large_new_york_food_units";
+            public static final String MEDIUM_ITALIAN_FOOD_UNITS ="medium_italian_food_units";
+            public static final String LARGE_ITALIAN_FOOD_UNITS ="large_italian_food_units";
+            public static final String MEDIUM_STUFFED_CRUST_FOOD_UNITS ="medium_stuffed_crust_food_units";
+            public static final String LARGE_STUFFED_CRUST_FOOD_UNITS ="large_stuffed_crust_food_units";
+            public static final String SMALL_ORIGINAL_FOOD_UNITS ="small_original_food_units";
+            public static final String MEDIUM_ORIGINAL_FOOD_UNITS ="medium_original_food_units";
+            public static final String LARGE_ORIGINAL_FOOD_UNITS ="large_original_food_units";
+            public static final String EXTRA_LARGE_ORIGINAL_FOOD_UNITS ="extra_large_original_food_units";
+            public static final String SMALL_GLUTEN_FREE_FOOD_UNITS ="small_gluten_free_food_units";
+            public static final String PERSONAL_ORIGINAL_PAN_FOOD_UNITS ="personal_original_pan_food_units";
+            public static final String MEDIUM_ORIGINAL_PAN_FOOD_UNITS ="medium_original_pan_food_units";
+            public static final String LARGE_ORIGINAL_PAN_FOOD_UNITS ="large_original_pan_food_units";
+            public static final String MEDIUM_HAND_TOSSED_FOOD_UNITS ="medium_hand_tossed_food_units";
+            public static final String LARGE_HAND_TOSSED_FOOD_UNITS ="large_hand_tossed_food_units";
+
+
             public static final String PEPPERONI = "pepperoni";
             public static final String ITALIAN_SAUSAGE = "italian_sausage";
             public static final String MEATBALL = "meatball";
