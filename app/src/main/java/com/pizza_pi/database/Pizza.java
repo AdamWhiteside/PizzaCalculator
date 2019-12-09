@@ -1,8 +1,11 @@
 package com.pizza_pi.database;
 
+import com.pizza_pi.PizzaBuilder;
+
 import java.io.Serializable;
 import java.util.UUID;
 import java.util.LinkedList;
+
 
 public class Pizza implements Serializable
 {
@@ -12,6 +15,15 @@ public class Pizza implements Serializable
     private double mProperRadius;
     private double mToppingPrice;
     private LinkedList<String> toppings = new LinkedList<>();
+
+    int pep = PizzaBuilder.getInstance().toppingValuePep;
+    int sau = PizzaBuilder.getInstance().toppingValueSau;
+    int che = PizzaBuilder.getInstance().toppingValueChe;
+
+    String Pep = new Integer(pep).toString();
+    String Sau = new Integer(sau).toString();
+    String Che = new Integer(che).toString();
+
 
     public Pizza()
     {
